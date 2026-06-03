@@ -1,0 +1,36 @@
+<section aria-label="Notificaciones">
+  <header>
+    <h2>Notifications</h2>
+    <div role="status" aria-live="polite">
+      Unread: {{ notificationService.unreadCount() }}
+    </div>
+  </header>
+
+  <!-- Live region for accessibility (new notifications) -->
+  <div aria-live="polite" class="sr-only">
+    @if (newNotificationAlert()) {
+      {{ newNotificationAlert() }}
+    }
+  </div>
+
+  <ul role="list" class="notifications-list">
+    @for (note of notificationService.notifications(); track note.id) {
+      <li role="listitem" class="notification-item" [class.read]="note.read">
+        
+        <strong>{{ note.title }}</strong>
+        <p>{{ note.message }}</p>
+        <small>{{ note.createdAt | date:'shortTime' }}</small>
+
+        @if (!note.read) {
+          <button
+            aria-label="Mark notification as read"
+            (click)="markAsRead(note.id)">
+            Marcar como leída
+          </button>
+        }
+      </li>
+    } @empty {
+      <li role="listitem">No hay notificaciones.</li>
+    }
+  </ul>
+</section>

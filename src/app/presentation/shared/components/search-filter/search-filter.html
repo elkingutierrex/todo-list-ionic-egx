@@ -1,0 +1,60 @@
+<div class="search-filter-container">
+  <mat-form-field appearance="outline" class="search-field glass-input">
+    <mat-icon matPrefix>search</mat-icon>
+    <input
+      matInput
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="onSearchChange($event)"
+      placeholder="Search tasks..."
+    />
+    <button
+      *ngIf="searchTerm"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="searchTerm = ''; onSearchChange('')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button mat-stroked-button [matMenuTriggerFor]="sortMenu" class="sort-btn glass-btn">
+    <mat-icon>sort</mat-icon>
+    <span>{{ getSortLabel() }}</span>
+  </button>
+
+  <mat-menu #sortMenu="matMenu">
+    <button
+      mat-menu-item
+      (click)="setSort('date-desc')"
+      [class.active-sort]="currentSort === 'date-desc'"
+    >
+      <mat-icon>history</mat-icon>
+      <span>Newest First</span>
+    </button>
+    <button
+      mat-menu-item
+      (click)="setSort('date-asc')"
+      [class.active-sort]="currentSort === 'date-asc'"
+    >
+      <mat-icon>update</mat-icon>
+      <span>Oldest First</span>
+    </button>
+    <button
+      mat-menu-item
+      (click)="setSort('alphabetical')"
+      [class.active-sort]="currentSort === 'alphabetical'"
+    >
+      <mat-icon>sort_by_alpha</mat-icon>
+      <span>Alphabetical (A-Z)</span>
+    </button>
+    <button
+      mat-menu-item
+      (click)="setSort('status')"
+      [class.active-sort]="currentSort === 'status'"
+    >
+      <mat-icon>check_circle</mat-icon>
+      <span>Status</span>
+    </button>
+  </mat-menu>
+</div>

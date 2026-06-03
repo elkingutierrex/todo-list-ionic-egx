@@ -1,0 +1,21 @@
+<mat-card class="task-card" [class.completed]="task.isCompleted">
+  <div class="task-content">
+    <mat-checkbox [checked]="task.isCompleted" (change)="onToggle()" color="primary">
+    </mat-checkbox>
+    <div class="task-info">
+      <h3 [class.strike]="task.isCompleted">{{ task.title }}</h3>
+      <p *ngIf="task.description">{{ task.description }}</p>
+      <span class="date"
+        ><mat-icon inline>schedule</mat-icon>{{ task.createdAt | date: 'mediumDate' }}</span
+      >
+    </div>
+  </div>
+  <div class="task-actions">
+    <button mat-icon-button color="primary" (click)="onEdit()" matTooltip="Edit Task">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button color="warn" (click)="onDelete()" matTooltip="Delete Task">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</mat-card>

@@ -1,0 +1,47 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.glass-toolbar {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        color: #3f51b5;
+        font-size: 1.2rem;
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .user-email {
+            font-weight: 300;
+            color: #555;
+            display: none; // Hide on small screens
+
+            @media (min-width: 600px) {
+                display: block;
+            }
+        }
+    }
+}
+
+.logout-btn{
+    color: #f44336;
+    font-weight: 600;
+    border-radius: 5px;
+}

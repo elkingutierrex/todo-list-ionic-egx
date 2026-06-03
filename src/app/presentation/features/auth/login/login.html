@@ -1,0 +1,36 @@
+<mat-card class="login-card">
+  <img src="/Logo.png" alt="logo" class="logo-main" />
+  <mat-card-header>
+    <mat-card-title> Welcome Back </mat-card-title>
+    <mat-card-subtitle>Sign in to manage your tasks</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [style.width.%]="100">
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input matInput [formControl]="emailControl" placeholder="name@example.com" required />
+        <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onSubmit($event)"
+          [disabled]="emailControl.invalid || isLoading"
+        >
+          {{ isLoading ? 'Checking...' : 'Sign In' }}
+        </button>
+      </mat-card-actions>
+    </form>
+    <pre>
+      test email: test@example.com
+    </pre>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,33 @@
+<div class="page-container">
+  <app-navbar></app-navbar>
+
+  <div class="content">
+    <div class="task-manager-container">
+      <div class="task-header">
+        <h2 class="page-title">My Tasks</h2>
+        <div class="form-actions">
+          <button mat-raised-button color="primary" (click)="openDialog()">
+            <mat-icon>add_circle</mat-icon> Add Task
+          </button>
+        </div>
+      </div>
+
+      <app-search-filter (search)="onSearch($event)" (sortChange)="onSortChange($event)">
+      </app-search-filter>
+
+      <div class="task-list">
+        <div *ngIf="filteredTasks().length === 0" class="empty-state">
+          <img src="https://cdni.iconscout.com/illustration/premium/thumb/empty-state-2130362-1800926.png" alt="Empty"
+            class="empty-img" style="opacity: 0.6; width: 200px" />
+          <h3>{{ searchTerm() ? 'No Matching Tasks' : 'All Caught Up!' }}</h3>
+          <p>{{ searchTerm() ? 'Try adjusting your search filters.' : 'You have no pending tasks. Enjoy your day!' }}
+          </p>
+        </div>
+
+        <app-task-item *ngFor="let task of filteredTasks()" [task]="task" (toggle)="onToggle(task)"
+          (edit)="onEdit(task)" (delete)="onDelete(task)" class="task-item-wrapper">
+        </app-task-item>
+      </div>
+    </div>
+  </div>
+</div>

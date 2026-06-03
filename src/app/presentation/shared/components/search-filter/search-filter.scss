@@ -1,0 +1,55 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.search-filter-container {
+    display: flex;
+    gap: 16px;
+    align-items: normal;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+}
+
+.search-field {
+    flex: 1;
+
+    // Override Material styles for glassmorphism
+    ::ng-deep .mat-mdc-text-field-wrapper {
+        background-color: rgba(255, 255, 255, 0.4) !important;
+        backdrop-filter: blur(8px);
+    }
+
+    ::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,
+    ::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch,
+    ::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+        border-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.sort-btn {
+    height: 56px; // Match input height
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    color: #555;
+    font-weight: 500;
+
+    mat-icon {
+        margin-right: 8px;
+    }
+}
+
+.active-sort {
+    background-color: rgba(63, 81, 181, 0.08);
+    font-weight: 500;
+    color: #3f51b5;
+
+    mat-icon {
+        color: #3f51b5;
+    }
+}
