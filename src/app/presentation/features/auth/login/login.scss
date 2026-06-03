@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+:host {
+  display: block;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+}
+
+.login-wrapper {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 10px 20px -5px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+}
+
+.logo-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.icon-avatar {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  color: white;
+  width: 64px;
+  height: 64px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.premium-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: white;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #111827;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.premium-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.btn-submit {
+  background: #111827;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: #1f2937;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.15);
+}
+
+.btn-submit:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.demo-accounts {
+  border-top: 1px solid rgba(209, 213, 219, 0.5);
+  padding-top: 1.5rem;
+}
+
+.demo-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.pill-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.role-pill {
+  border: none;
+  border-radius: 999px;
+  padding: 0.4rem 0.875rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  color: white;
+}
+
+.role-pill:hover {
+  opacity: 0.85;
+}
+
+.admin-pill { background: #ef4444; }
+.user-pill { background: #3b82f6; }
+.guest-pill { background: #8b5cf6; }

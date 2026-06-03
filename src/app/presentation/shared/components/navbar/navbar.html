@@ -1,0 +1,13 @@
+<mat-toolbar class="glass-toolbar">
+  <div class="brand">
+    <img src="/Logo.png" alt="logo" class="logo-circle" />
+    <span>egx-TaskChallenge</span>
+  </div>
+  <span class="spacer"></span>
+  <div class="user-info">
+    <span class="user-email">{{ currentUser()?.email }}</span>
+    <button mat-icon-button (click)="onLogout()" aria-label="Logout" class="logout-btn">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

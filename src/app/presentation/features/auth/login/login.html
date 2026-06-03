@@ -1,0 +1,42 @@
+<div class="login-wrapper">
+  <div class="glass-card">
+    <div class="logo-box">
+      <div class="icon-avatar">✦</div>
+    </div>
+    <h2 class="title">Welcome Back</h2>
+    <p class="subtitle">Sign in to access your notification dashboard</p>
+
+    <form class="login-form" (submit)="onSubmit($event)">
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input 
+          id="email" 
+          type="email" 
+          [formControl]="emailControl" 
+          placeholder="name@example.com" 
+          required 
+          class="premium-input"
+        />
+        @if (emailControl.hasError('email') && !emailControl.hasError('required') && emailControl.touched) {
+          <span class="error-text">Please enter a valid email address</span>
+        }
+        @if (emailControl.hasError('required') && emailControl.touched) {
+          <span class="error-text">Email is required</span>
+        }
+      </div>
+
+      <button type="submit" class="btn-submit" [disabled]="emailControl.invalid || isLoading">
+        {{ isLoading ? 'Checking...' : 'Sign In' }}
+      </button>
+    </form>
+
+    <div class="demo-accounts">
+      <p class="demo-title">Quick Demo Accounts:</p>
+      <div class="pill-group">
+        <button class="role-pill admin-pill" (click)="emailControl.setValue('admin@example.com'); onSubmit($event)">Admin</button>
+        <button class="role-pill user-pill" (click)="emailControl.setValue('user@example.com'); onSubmit($event)">User</button>
+        <button class="role-pill guest-pill" (click)="emailControl.setValue('guest@example.com'); onSubmit($event)">Guest</button>
+      </div>
+    </div>
+  </div>
+</div>
