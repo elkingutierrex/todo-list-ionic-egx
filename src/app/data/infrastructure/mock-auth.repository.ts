@@ -8,7 +8,10 @@ import { User } from '../../core/models/user.model';
 })
 export class MockAuthRepository extends AuthRepository {
     private users: User[] = [
-        { id: '1', email: 'test@example.com' } // Pre-seeded user
+        { id: '1', email: 'test@example.com', role: 'USER' }, 
+        { id: '2', email: 'admin@example.com', role: 'ADMIN' },
+        { id: '3', email: 'user@example.com', role: 'USER' },
+        { id: '4', email: 'guest@example.com', role: 'GUEST' }
     ];
     private currentUser: User | null = null;
 
@@ -20,7 +23,8 @@ export class MockAuthRepository extends AuthRepository {
     createUser(email: string): Observable<User> {
         const newUser: User = {
             id: Math.random().toString(36).substr(2, 9),
-            email
+            email,
+            role: 'USER'
         };
         this.users.push(newUser);
         return of(newUser);

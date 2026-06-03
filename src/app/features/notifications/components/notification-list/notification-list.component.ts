@@ -3,6 +3,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { NotificationService } from '../../../../infrastructure/services/notification.service';
 import { RoleService } from '../../../../infrastructure/services/role.service';
 import { ShowForRoleDirective } from '../../../../shared/directives/show-for-role.directive';
+import { AuthService } from '../../../../core/services/auth.service';
 
 @Component({
   selector: 'app-notification-list',
@@ -15,6 +16,7 @@ import { ShowForRoleDirective } from '../../../../shared/directives/show-for-rol
 export class NotificationListComponent {
   notificationService = inject(NotificationService);
   roleService = inject(RoleService);
+  private authService = inject(AuthService);
 
   readonly newNotificationAlert = signal<string | null>(null);
   private previousCount = 0;
@@ -33,5 +35,9 @@ export class NotificationListComponent {
 
   markAsRead(id: string) {
     this.notificationService.markAsRead(id);
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

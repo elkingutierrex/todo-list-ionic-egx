@@ -14,5 +14,10 @@ export const routes: Routes = [
     loadComponent: () => import('./presentation/features/tasks/task-list/task-list').then(m => m.TaskListComponent),
     canActivate: [authGuard]
   },
+  {
+    path: 'notifications',
+    loadComponent: () => import('./features/notifications/components/notification-list/notification-list.component').then(m => m.NotificationListComponent),
+    canActivate: [authGuard]
+  },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];

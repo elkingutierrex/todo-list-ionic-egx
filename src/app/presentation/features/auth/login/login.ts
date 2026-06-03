@@ -50,7 +50,7 @@ export class LoginComponent {
         this.isLoading = false;
         if (user) {
           this.authService.setCurrentUser(user);
-          this.router.navigate(['/tasks']);
+          this.router.navigate(['/notifications']);
         } else {
           this.promptCreateUser(email);
         }
@@ -91,7 +91,7 @@ export class LoginComponent {
               showConfirmButton: false,
               timer: 1500
             }).then(() => {
-              this.router.navigate(['/tasks']);
+              this.router.navigate(['/notifications']);
             });
           },
           error: () => {

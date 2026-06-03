@@ -1,16 +1,15 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, computed, inject } from '@angular/core';
 import { Role } from '../../domain/models/role.model';
+import { AuthService } from '../../core/services/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoleService {
-  // Signal privado y computed para lectura
-  readonly #currentRole = signal<Role>('USER');
-  
-  readonly currentRole = computed(() => this.#currentRole());
+  private authService = inject(AuthService);
 
-  setRole(role: Role) {
-    this.#currentRole.set(role);
-  }
+  readonly currentRole = computed<Role>(() => {
+    const user = this.authService.currentUser();
+    return user ? user.role : 'GUEST';
+  });
 }
