@@ -11,40 +11,41 @@
 :root {
   --ion-font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-  /* Premium Palette - Modern Blue/Violet */
-  --ion-color-primary: #6366f1;
-  --ion-color-primary-rgb: 99, 102, 241;
+  /* Enhanced Premium Palette - Higher Contrast */
+  --ion-color-primary: #4f46e5; /* Slightly darker indigo */
+  --ion-color-primary-rgb: 79, 70, 229;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #575ae4;
-  --ion-color-primary-tint: #7375f2;
+  --ion-color-primary-shade: #4338ca;
+  --ion-color-primary-tint: #6366f1;
 
-  --ion-color-success: #10b981;
-  --ion-color-warning: #f59e0b;
-  --ion-color-danger: #ef4444;
+  --ion-color-success: #059669;
+  --ion-color-warning: #d97706;
+  --ion-color-danger: #dc2626;
   --ion-color-dark: #0f172a;
-  --ion-color-medium: #64748b;
+  --ion-color-medium: #334155; /* Darker slate for better readability */
   --ion-color-light: #f8fafc;
 
   --ion-background-color: #f1f5f9;
   --ion-card-background: #ffffff;
-  --ion-toolbar-background: #6366f1;
+  --ion-toolbar-background: #4f46e5;
   --ion-toolbar-color: #ffffff;
 
   /* Custom Glassmorphism Tokens */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.3);
-  --glass-blur: blur(12px);
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --glass-blur: blur(16px);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --ion-background-color: #0f172a;
+    --ion-background-color: #020617;
     --ion-card-background: #1e293b;
     --ion-toolbar-background: #1e1b4b;
     --ion-toolbar-color: #ffffff;
-    --glass-bg: rgba(15, 23, 42, 0.7);
+    --glass-bg: rgba(15, 23, 42, 0.8);
     --glass-border: rgba(255, 255, 255, 0.1);
+    --ion-color-medium: #94a3b8; /* Lighter in dark mode for contrast */
   }
 }
 
@@ -52,63 +53,59 @@ html, body {
   height: 100%;
   margin: 0;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background-color: var(--ion-background-color);
-  color: var(--ion-text-color, #1e293b);
+  color: var(--ion-color-dark);
 }
 
 /* Animations */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeInUp 0.4s ease-out forwards;
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Premium Modal Styling */
+/* Modal Improvements */
 .premium-modal {
-  --border-radius: 24px;
-  --box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  --border-radius: 32px;
+  --box-shadow: 0 20px 60px rgba(0,0,0,0.15);
   
   &::part(content) {
-    border-radius: 24px 24px 0 0;
-    overflow: hidden;
+    border-radius: 32px 32px 0 0;
   }
 }
 
 @media (min-width: 768px) {
   .premium-modal {
-    --width: 550px;
-    --min-height: 400px;
-    --height: fit-content;
-    --border-radius: 24px;
+    --width: 600px; /* Wider for desktop readability */
+    --min-height: 450px;
+    --height: auto;
+    --max-height: 90vh;
     
     &::part(content) {
-      border-radius: 24px;
+      border-radius: 32px;
       margin: auto;
-      max-height: 80vh;
       position: relative;
     }
   }
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--ion-color-medium);
-  border-radius: 10px;
+/* Better accessibility for focus */
+:focus-visible {
+  outline: 2px solid var(--ion-color-primary);
+  outline-offset: 4px;
 }
 
-button {
-  cursor: pointer;
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+  border: 2px solid var(--ion-background-color);
 }
+
+button { cursor: pointer; }
