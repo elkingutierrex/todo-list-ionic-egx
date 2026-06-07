@@ -101,3 +101,14 @@ Decision: Increase initial bundle budgets to 1MB warning / 2MB error in `angular
 Reason: The default budget of 500kB/1MB is too strict when including the full Ionic Framework bundle alongside Firebase SDKs. Increasing the budget allows for a successful production build without stripping essential framework functionality.
 
 Final Decision: Adjusted budgets to accommodate framework overhead.
+---
+
+## DEC-008
+
+Date: 2026-06-07
+
+Decision: Replace SweetAlert2 with Ionic AlertController and ToastController.
+
+Reason: SweetAlert2 injected global styles (like `height: auto`) that conflicted with Ionic's strict viewport-filling layout, causing visual glitches and overlapping windows. Using native Ionic controllers ensures UI consistency, better mobile UX, and removes an unnecessary heavy dependency.
+
+Final Decision: Native Ionic components are the preferred choice for all dialogs and notifications.

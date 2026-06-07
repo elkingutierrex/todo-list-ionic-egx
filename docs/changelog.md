@@ -35,3 +35,5 @@
 - Build Fail: Corrected `Role` model import paths across services and directives.
 - UI: Migrated Login component to use Ionic components and centralized navigation to `/tasks`.
 - Authentication: Fixed user creation logic to include default 'USER' role.
+- UI: Removed SweetAlert2 and replaced with native Ionic Alert/Toast to fix overlapping and layout issues.
+- Git: Tagged stable version as `v1.1.0`.
