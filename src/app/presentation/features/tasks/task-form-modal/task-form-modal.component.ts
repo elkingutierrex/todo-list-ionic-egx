@@ -67,7 +67,7 @@ export interface TaskFormData {
 
         @if (categories.length > 0) {
           <div class="custom-field">
-            <label class="field-label">Category</label>
+            <label class="field-label">Category (Optional)</label>
             <ion-select
               [ngModel]="selectedCategoryId()"
               (ngModelChange)="selectedCategoryId.set($event)"
@@ -160,12 +160,20 @@ export class TaskFormModalComponent implements OnInit {
 
   submit(): void {
     if (!this.title().trim()) return;
-    const categoryId = this.selectedCategoryId() ?? undefined;
+    
+    // Explicitly handle empty categoryId to ensure it's optional
+    const categoryId = this.selectedCategoryId() || undefined;
+    
     const data: TaskFormData = {
       title: this.title().trim(),
       description: this.description().trim(),
-      categoryId: categoryId as string | undefined,
-      task: this.task ? { ...this.task, title: this.title().trim(), description: this.description().trim(), categoryId: categoryId as string | undefined } : undefined,
+      categoryId: categoryId,
+      task: this.task ? { 
+        ...this.task, 
+        title: this.title().trim(), 
+        description: this.description().trim(), 
+        categoryId: categoryId 
+      } : undefined,
     };
     this.modalCtrl.dismiss(data);
   }
