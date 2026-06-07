@@ -28,6 +28,8 @@
       @for (cat of categories(); track cat.id) {
         <ion-chip
           [class.selected]="selectedCategoryId() === cat.id"
+          [style.border-color]="cat.color"
+          [style.--background]="selectedCategoryId() === cat.id ? cat.color : 'var(--ion-card-background)'"
           (click)="filterByCategory(cat.id)">
           <span class="category-dot" [style.background]="cat.color"></span>
           {{ cat.name }}
