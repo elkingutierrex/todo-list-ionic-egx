@@ -14,11 +14,8 @@
 - [ ] Optimistic UI updates for task completion toggle
 - [ ] Task search / keyword filtering
 - [ ] Sort tasks by date, alphabetical, or category
-- [ ] Swipe-to-delete gesture (Ionic item-sliding)
-
-## Technical Debt
-
-- [ ] Replace ngx-spinner with Ionic skeleton screens
+- [x] Swipe-to-delete gesture (Ionic item-sliding)
+- [x] Replace ngx-spinner with Ionic initial skeletons
 - [ ] Add unit tests for all services
 - [ ] Add E2E tests with Cypress / Playwright
 - [ ] Replace Firebase stub repositories with real implementations once credentials are available

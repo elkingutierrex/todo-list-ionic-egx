@@ -77,3 +77,27 @@ Alternatives:
 - Option B: Guard category UI with Remote Config boolean flag
 
 Final Decision: **Option B** — Meets assessment requirement and demonstrates Remote Config usage.
+
+---
+
+## DEC-006
+
+Date: 2026-06-07
+
+Decision: Consolidate all domain models into `src/app/core/models/`.
+
+Reason: Having duplicate models or disjoint folders (`domain/models` and `core/models`) caused circular dependency potential and import path confusion in various services/directives after the Ionic migration. Centralizing them simplifies the architecture and fixes build visibility issues.
+
+Final Decision: Centralized model strategy for better maintainability.
+
+---
+
+## DEC-007
+
+Date: 2026-06-07
+
+Decision: Increase initial bundle budgets to 1MB warning / 2MB error in `angular.json`.
+
+Reason: The default budget of 500kB/1MB is too strict when including the full Ionic Framework bundle alongside Firebase SDKs. Increasing the budget allows for a successful production build without stripping essential framework functionality.
+
+Final Decision: Adjusted budgets to accommodate framework overhead.
