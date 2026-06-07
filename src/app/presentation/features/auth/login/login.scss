@@ -2,41 +2,81 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  max-width: 450px;
-  margin: 0 auto;
-  padding: 0 16px;
+  padding: 24px;
+  background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.05), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.05), transparent 40%);
   
-  .logo-main {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 32px;
-    border-radius: 20%;
-    display: block;
+  .logo-wrapper {
+    margin-bottom: 40px;
+    text-align: center;
+    
+    .logo-main {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 16px;
+      border-radius: 30px;
+      display: block;
+      box-shadow: 0 12px 32px rgba(79, 70, 229, 0.2);
+      border: 4px solid #fff;
+    }
   }
 }
 
 ion-card {
-  --background: var(--ion-card-background, #fff);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
+  --background: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 28px;
   margin: 0;
+  border: 1px solid rgba(0,0,0,0.02);
+  
+  ion-card-header {
+    padding-bottom: 8px;
+    text-align: center;
+  }
+  
+  ion-card-title {
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+  }
 }
 
 ion-item {
-  --padding-start: 0;
+  --background: #f1f5f9;
+  --padding-start: 16px;
+  --padding-end: 16px;
   --inner-padding-end: 0;
-  --background: transparent;
+  --border-radius: 16px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  
+  &::part(native) {
+    border: 1px solid transparent;
+  }
 }
 
-ion-card-title {
+ion-input {
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+}
+
+.login-btn {
+  --border-radius: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  height: 54px;
   font-weight: 700;
-  font-size: 1.5rem;
-  color: var(--ion-color-dark);
+  font-size: 1rem;
+  margin-top: 24px;
+  --box-shadow: 0 10px 20px rgba(79, 70, 229, 0.25);
 }
 
-ion-loading {
-  --background: var(--ion-color-light);
-  --spinner-color: var(--ion-color-primary);
+@media (prefers-color-scheme: dark) {
+  ion-card { --background: #1e293b; }
+  ion-item { --background: #0f172a; }
 }
-

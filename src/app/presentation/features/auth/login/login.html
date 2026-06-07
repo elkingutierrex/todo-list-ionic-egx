@@ -1,56 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
-    <ion-title>Welcome</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content class="ion-padding ion-text-center">
+<ion-content class="ion-padding">
   <div class="login-container">
-    <img src="assets/logo.png" alt="Logo" class="logo-main" (error)="$event.target.src='https://ionicframework.com/docs/img/demos/avatar.svg'">
+    <div class="logo-wrapper animate-fade-in">
+      <img src="assets/logo.png" alt="Logo" class="logo-main" onerror="this.src='https://ionicframework.com/docs/img/demos/avatar.svg'">
+      <p style="color: var(--ion-color-medium); font-weight: 500;">(N)ever (S)top Learning</p>
+    </div>
 
-    <ion-card mode="ios">
+    <ion-card mode="ios" class="animate-fade-in">
       <ion-card-header>
-        <ion-card-title>Login to TodoManager</ion-card-title>
+        <ion-card-title>elkingutierrex</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
         <form (submit)="onSubmit($event)">
-          <ion-item lines="full" class="ion-margin-bottom">
-            <ion-label position="stacked">Email Address</ion-label>
+          <ion-item lines="none">
+            <ion-icon slot="start" name="mail-outline" color="medium" style="margin-right: 12px;"></ion-icon>
             <ion-input
               type="email"
-              placeholder="email@example.com"
+              placeholder="Email: admin@example.com"
               [formControl]="emailControl"
               autocomplete="email"
-              required>
-              <ion-icon slot="start" name="mail-outline" aria-hidden="true"></ion-icon>
-            </ion-input>
+              required />
           </ion-item>
-
-          @if (emailControl.invalid && (emailControl.dirty || emailControl.touched)) {
-            <ion-text color="danger" class="ion-text-start">
-              @if (emailControl.errors?.['required']) { <p>Email is required.</p> }
-              @if (emailControl.errors?.['email']) { <p>Please enter a valid email.</p> }
-            </ion-text>
-          }
 
           <ion-button
             expand="block"
             type="submit"
             [disabled]="emailControl.invalid || isLoading"
-            class="ion-margin-top">
-            <ion-icon slot="start" name="log-in-outline"></ion-icon>
-            {{ isLoading ? 'Checking...' : 'Sign In' }}
+            class="login-btn">
+            {{ isLoading ? 'Entering...' : 'Unlock Account' }}
           </ion-button>
         </form>
-
-        <div class="ion-margin-top ion-text-center">
-          <p style="font-size: 0.8rem; color: var(--ion-color-medium)">Try: admin@example.com</p>
-        </div>
       </ion-card-content>
     </ion-card>
   </div>
 
-  <ion-loading [isOpen]="isLoading" message="Please wait..."></ion-loading>
+  <ion-loading [isOpen]="isLoading" message="Authenticating..."></ion-loading>
 </ion-content>
-

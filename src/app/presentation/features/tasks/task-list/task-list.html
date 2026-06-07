@@ -1,27 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
     <ion-title>
       My Tasks
       @if (pendingCount() > 0) {
-        <ion-badge color="warning" style="margin-left: 8px">{{ pendingCount() }}</ion-badge>
+        <ion-badge color="warning" class="pending-badge">{{ pendingCount() }}</ion-badge>
       }
     </ion-title>
     <ion-buttons slot="end">
       @if (categoriesEnabled()) {
-        <ion-button (click)="navigateToCategories()" title="Manage Categories">
+        <ion-button (click)="navigateToCategories()" title="Manage Categories" color="dark">
           <ion-icon slot="icon-only" name="pricetag" />
         </ion-button>
       }
-      <ion-button (click)="logout()" title="Logout">
+      <ion-button (click)="logout()" title="Logout" color="dark">
         <ion-icon slot="icon-only" name="log-out" />
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-
-  @if (categoriesEnabled() && categories().length > 0) {
+  <ion-toolbar class="filter-toolbar">
     <div class="category-filter">
       <ion-chip
         [class.selected]="selectedCategoryId() === null"
@@ -31,73 +28,84 @@
       @for (cat of categories(); track cat.id) {
         <ion-chip
           [class.selected]="selectedCategoryId() === cat.id"
-          [style.--background]="cat.color + '33'"
-          [style.--color]="cat.color"
           (click)="filterByCategory(cat.id)">
+          <span class="category-dot" [style.background]="cat.color"></span>
           {{ cat.name }}
         </ion-chip>
       }
     </div>
-  }
+  </ion-toolbar>
+</ion-header>
 
-  @if (isLoading()) {
-    <ion-list>
-      @for (i of [1,2,3,4]; track i) {
-        <ion-item>
-          <ion-label>
-            <ion-skeleton-text [animated]="true" style="width:70%;height:1rem;border-radius:4px" />
-            <ion-skeleton-text [animated]="true" style="width:50%;height:0.75rem;border-radius:4px" />
-          </ion-label>
-        </ion-item>
-      }
-    </ion-list>
-  } @else if (tasks().length === 0) {
-    <div class="empty-state">
-      <ion-icon name="checkmark-circle" color="medium" style="font-size: 4rem" />
-      <ion-text color="medium">
-        <p>No tasks yet. Tap + to add one!</p>
-      </ion-text>
-    </div>
-  } @else {
-    <ion-list>
-      @for (task of tasks(); track trackByTaskId($index, task)) {
-        <ion-item-sliding>
-          <ion-item [class.completed]="task.isCompleted" button (click)="onToggle(task)">
-            <ion-icon
-              slot="start"
-              [name]="task.isCompleted ? 'checkmark-circle' : 'ellipse-outline'"
-              [color]="task.isCompleted ? 'success' : 'medium'" />
-            <ion-label>
-              <h2 [class.strikethrough]="task.isCompleted">{{ task.title }}</h2>
-              @if (task.description) {
-                <p>{{ task.description }}</p>
-              }
-              @if (categoriesEnabled() && task.categoryId && categoryMap().get(task.categoryId); as cat) {
-                <ion-note>
-                  <span class="category-dot" [style.background]="cat.color"></span>
-                  {{ cat.name }}
-                </ion-note>
-              }
-            </ion-label>
-          </ion-item>
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <div class="animate-fade-in">
+    @if (isLoading()) {
+      <ion-list lines="none">
+        @for (i of [1,2,3,4,5]; track i) {
+          <div class="task-card" style="opacity: 0.5;">
+            <ion-item lines="none">
+              <ion-skeleton-text animated style="width: 24px; height: 24px; border-radius: 50%;" slot="start" />
+              <ion-label>
+                <ion-skeleton-text animated style="width: 60%; height: 1.2rem; border-radius: 4px;" />
+                <ion-skeleton-text animated style="width: 40%; height: 0.9rem; border-radius: 4px; margin-top: 8px;" />
+              </ion-label>
+            </ion-item>
+          </div>
+        }
+      </ion-list>
+    } @else if (tasks().length > 0) {
+      <ion-list lines="none">
+        @for (task of tasks(); track task.id) {
+          <ion-item-sliding style="margin-bottom: 12px;">
+            <ion-item button="true" (click)="onToggle(task)" class="task-card">
+              <ion-icon
+                slot="start"
+                [name]="task.isCompleted ? 'checkmark-circle' : 'ellipse-outline'"
+                [color]="task.isCompleted ? 'success' : 'medium'"
+                style="font-size: 24px;"
+                (click)="$event.stopPropagation(); onToggle(task)" />
+              
+              <ion-label>
+                <h2 [class.strikethrough]="task.isCompleted">{{ task.title }}</h2>
+                <p [class.strikethrough]="task.isCompleted">{{ task.description }}</p>
+                
+                @if (categoriesEnabled() && task.categoryId && categoryMap().get(task.categoryId); as cat) {
+                  <div class="category-tag">
+                    <span class="category-dot" [style.background]="cat.color"></span>
+                    {{ cat.name }}
+                  </div>
+                }
+              </ion-label>
+              
+              <ion-buttons slot="end">
+                <ion-button (click)="openTaskModal(task); $event.stopPropagation()" color="primary" fill="clear">
+                  <ion-icon name="create" slot="icon-only" />
+                </ion-button>
+              </ion-buttons>
+            </ion-item>
 
-          <ion-item-options side="end">
-            <ion-item-option color="primary" (click)="openTaskModal(task)">
-              <ion-icon slot="icon-only" name="create" />
-            </ion-item-option>
-            <ion-item-option color="danger" (click)="onDelete(task)">
-              <ion-icon slot="icon-only" name="trash" />
-            </ion-item-option>
-          </ion-item-options>
-        </ion-item-sliding>
-      }
-    </ion-list>
-  }
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="onDelete(task)" style="border-radius: 0 20px 20px 0;">
+                <ion-icon slot="icon-only" name="trash" />
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        }
+      </ion-list>
+    } @else {
+      <div class="empty-state">
+        <div class="empty-icon-box">
+          <ion-icon name="add" />
+        </div>
+        <h2>No tasks found</h2>
+        <p>Your list is empty. Tap the button below to add your first task!</p>
+      </div>
+    }
+  </div>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button (click)="openTaskModal()">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openTaskModal()" class="fab-main">
       <ion-icon name="add" />
     </ion-fab-button>
   </ion-fab>
-
 </ion-content>
