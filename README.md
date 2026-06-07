@@ -83,10 +83,59 @@ Strategic control documents for project lifecycle:
 
 ---
 
-## 👤 Author
+## 📱 Hybrid Development (Android & iOS)
 
-**elkingutierrex**
-*(N)ever (S)top Learning*
+This project uses **Capacitor** (the modern successor to Cordova) for hybrid builds.
+
+### Requirements:
+- **Android**: Android Studio & Android SDK.
+- **iOS**: Mac with Xcode (for `.ipa` generation).
+
+### Compilation Steps:
+1. **Sync web code to native projects**:
+   ```bash
+   npx cap sync
+   ```
+2. **Open in Android Studio**:
+   ```bash
+   npx cap open android
+   ```
+3. **Open in Xcode (macOS only)**:
+   ```bash
+   npx cap open ios
+   ```
+4. **Generate APK (from root)**:
+   ```bash
+   cd android && ./gradlew assembleDebug
+   ```
 
 ---
-© 2026 elkingutierrex. Managed with Antigravity AI.
+
+## 🚩 Remote Config & Feature Flags
+
+A **Feature Flag** is implemented to control the visibility of the "Categories" management feature.
+
+### Demo Instructions:
+1. Go to the **Firebase Console** > **Remote Config**.
+2. Add a parameter named `categoryFeatureEnabled`.
+3. Set its value to `false`.
+4. Publish changes.
+5. **Result**: The Category filter chips and the "Manage Categories" button will disappear from the app UI.
+6. Set to `true` to restore the functionality.
+
+---
+
+## ⚡ Performance Optimization
+
+- **Lazy Loading**: All features (Auth, Tasks, Categories) are lazy-loaded via `loadComponent` in `app.routes.ts`.
+- **Signals**: Used for granular change detection, minimizing DOM re-renders.
+- **Event Coalescing**: Zone.js optimization enabled in `app.config.ts`.
+- **Budgets**: Production bundle budgets optimized for framework overhead.
+
+---
+
+## 🌐 Live Demo & Binary
+- **Hosting URL**: [https://egx-task-challenge.web.app](https://egx-task-challenge.web.app)
+- **APK Path**: `android/app/build/outputs/apk/debug/app-debug.apk` (Generated after build)
+
+---
