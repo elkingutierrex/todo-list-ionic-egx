@@ -91,8 +91,6 @@ export class TaskListComponent implements OnInit {
     const modal = await this.modalCtrl.create({
       component: TaskFormModalComponent,
       componentProps: { task, categories: this.categories() },
-      breakpoints: [0, 0.5, 0.8, 1],
-      initialBreakpoint: 0.5,
       backdropDismiss: true,
       cssClass: 'premium-modal'
     });

@@ -27,55 +27,59 @@ export interface TaskFormData {
     IonInput, IonTextarea, IonSelect, IonSelectOption, IonButton, IonButtons, IonIcon
   ],
   template: `
-    <ion-header class="ion-no-border">
-      <ion-toolbar>
+    <ion-header>
+      <ion-toolbar color="dark">
         <ion-buttons slot="start">
-          <ion-button (click)="dismiss()" color="dark">
+          <ion-button (click)="dismiss()">
             <ion-icon slot="icon-only" name="close" />
           </ion-button>
         </ion-buttons>
         <ion-title>{{ task ? 'Edit Task' : 'New Task' }}</ion-title>
         <ion-buttons slot="end">
-          <ion-button [strong]="true" (click)="submit()" [disabled]="!title()" color="primary" fill="solid" mode="ios" class="save-btn">
-            Save
+          <ion-button [strong]="true" (click)="submit()" [disabled]="!title()">
+            SAVE
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="form-content ion-padding">
-      <div class="form-wrapper">
-        <ion-item lines="none" class="input-item">
-          <ion-label position="stacked" class="high-contrast-label">Title <span class="required">*</span></ion-label>
+    <ion-content class="ion-padding">
+      <div style="padding-bottom: 20px;">
+        <ion-item lines="full" style="--padding-start: 0;">
+          <ion-label position="stacked" style="color: black !important; font-weight: 800 !important; font-size: 1.1rem !important;">
+            Title *
+          </ion-label>
           <ion-input
             [ngModel]="title()"
             (ngModelChange)="title.set($event)"
-            placeholder="What needs to be done?"
-            maxlength="100"
-            autocapitalize="sentences"
-            class="main-input" />
+            placeholder="Name your task"
+            style="color: black !important; font-size: 1.1rem !important; --padding-top: 15px;"
+            required />
         </ion-item>
 
-        <ion-item lines="none" class="input-item">
-          <ion-label position="stacked" class="high-contrast-label">Description</ion-label>
+        <ion-item lines="full" style="--padding-start: 0; margin-top: 20px;">
+          <ion-label position="stacked" style="color: black !important; font-weight: 800 !important; font-size: 1.1rem !important;">
+            Description
+          </ion-label>
           <ion-textarea
             [ngModel]="description()"
             (ngModelChange)="description.set($event)"
             placeholder="Add some details..."
-            rows="5"
-            autocapitalize="sentences"
-            class="main-input" />
+            rows="6"
+            style="color: black !important; font-size: 1rem !important; --padding-top: 15px;" />
         </ion-item>
 
         @if (categories.length > 0) {
-          <ion-item lines="none" class="input-item">
-            <ion-label position="stacked" class="high-contrast-label">Category</ion-label>
+          <ion-item lines="full" style="--padding-start: 0; margin-top: 20px;">
+            <ion-label position="stacked" style="color: black !important; font-weight: 800 !important; font-size: 1.1rem !important;">
+              Category
+            </ion-label>
             <ion-select
               [ngModel]="selectedCategoryId()"
               (ngModelChange)="selectedCategoryId.set($event)"
-              placeholder="Select category"
-              interface="action-sheet"
-              class="main-input">
+              placeholder="Pick a category"
+              interface="popover"
+              style="color: black !important; font-weight: 600 !important; --padding-top: 15px;">
               <ion-select-option [value]="null">No Category</ion-select-option>
               @for (cat of categories; track cat.id) {
                 <ion-select-option [value]="cat.id">{{ cat.name }}</ion-select-option>
@@ -87,63 +91,13 @@ export interface TaskFormData {
     </ion-content>
   `,
   styles: [`
-    ion-header {
-      --background: var(--ion-card-background);
-      border-bottom: 1px solid var(--glass-border);
-      padding: 12px 6px 0;
-    }
     ion-toolbar {
-      --background: var(--ion-card-background);
-      --color: var(--ion-color-dark);
-      ion-title {
-        font-weight: 800;
-        font-size: 1.3rem;
-        letter-spacing: -0.5px;
-      }
+      --background: #000;
+      --color: #fff;
     }
     ion-content {
-      --background: var(--ion-card-background);
+      --background: #fff;
     }
-    .form-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 10px 0 40px;
-    }
-    .input-item {
-      --background: var(--ion-background-color);
-      --padding-start: 16px;
-      --padding-end: 16px;
-      --border-radius: 16px;
-      margin-bottom: 4px;
-      border: 1px solid transparent;
-      transition: border-color 0.2s;
-      
-      &.item-has-focus {
-        border-color: var(--ion-color-primary);
-      }
-    }
-    .high-contrast-label {
-      font-weight: 700 !important;
-      color: var(--ion-color-dark) !important;
-      font-size: 0.95rem !important;
-      margin-bottom: 4px !important;
-      opacity: 0.9;
-    }
-    .main-input {
-      --padding-top: 14px;
-      --padding-bottom: 14px;
-      font-size: 1.05rem;
-      color: var(--ion-color-dark);
-    }
-    .save-btn {
-      --border-radius: 12px;
-      --padding-start: 20px;
-      --padding-end: 20px;
-      font-weight: 700;
-      height: 38px;
-    }
-    .required { color: var(--ion-color-danger); }
   `],
 })
 export class TaskFormModalComponent implements OnInit {

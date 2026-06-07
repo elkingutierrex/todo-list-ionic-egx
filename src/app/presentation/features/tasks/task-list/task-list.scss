@@ -1,55 +1,92 @@
-ion-item.completed {
-  --color: var(--ion-color-medium);
-}
+ion-header {
+  ion-toolbar {
+    --background: #000000;
+    --color: #ffffff;
+    --padding-top: 10px;
+    --padding-bottom: 5px;
 
-.strikethrough {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-.category-filter {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 8px 12px;
-  gap: 6px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  ion-chip {
-    flex-shrink: 0;
-    transition: opacity 0.2s;
-
-    &.selected {
-      font-weight: 600;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    ion-title {
+      font-weight: 900;
+      font-size: 1.8rem;
     }
   }
 }
 
+.filter-toolbar {
+  --background: #ffffff;
+  border-bottom: 2px solid #000000;
+}
+
+.category-filter {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 16px;
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+
+  ion-chip {
+    margin: 0;
+    border: 2px solid #000;
+    background: transparent;
+    color: #000;
+    font-weight: 700;
+    
+    &.selected {
+      background: #000;
+      color: #fff;
+    }
+  }
+}
+
+.task-card {
+  --background: #ffffff;
+  --padding-top: 15px;
+  --padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+  
+  h2 {
+    color: #000000 !important;
+    font-weight: 800 !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 6px;
+  }
+
+  p {
+    color: #374151 !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+  }
+}
+
+.category-tag {
+  display: inline-flex;
+  align-items: center;
+  background: #f3f4f6;
+  border: 1px solid #000;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 8px;
+  color: #000;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
 .category-dot {
-  display: inline-block;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  margin-right: 4px;
-  vertical-align: middle;
+  margin-right: 6px;
 }
 
 .empty-state {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 24px;
-  gap: 12px;
+  padding: 100px 20px;
+  text-align: center;
+  h2 { font-size: 1.5rem; font-weight: 900; }
+  p { color: #000; font-size: 1.1rem; }
+}
 
-  p {
-    font-size: 1rem;
-    text-align: center;
-  }
+.strikethrough {
+  text-decoration: line-through;
+  opacity: 0.3;
 }
