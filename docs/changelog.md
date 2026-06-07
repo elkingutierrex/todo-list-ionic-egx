@@ -38,7 +38,7 @@
 - UI: Removed SweetAlert2 and replaced with native Ionic Alert/Toast to fix overlapping and layout issues.
 - Git: Tagged stable version as `v1.1.0`.
 
-## v1.2.0 — 2026-06-07 (Latest)
+## v1.2.0 — 2026-06-07
 
 ### Added
 - **Logo Integration**: New custom developer-centric logo for "elkingutierrex" integrated into Login and Header.
@@ -50,3 +50,13 @@
 - **UI "Black Blocks"**: Fixed an issue where input fields were inheriting dark background styles, ensuring a clean and user-friendly appearance.
 - **Task Creation**: Resolved final data handling issues in the task form.
 - **Git History**: Consolidated legacy commits into a professional starting point, preserving today's step-by-step history.
+
+## v1.3.0 — 2026-06-07 (Latest)
+
+### Added
+- **Firebase Full Activation**: Switched from Mock Repositories to real Firebase Firestore in production and development environments.
+- **Responsive Desktop Actions**: Task list now shows fixed Edit/Delete buttons on desktop screens (>992px) while maintaining sliding gestures for mobile/tablet.
+
+### Changed
+- **Optional Categorization**: Made category selection explicitly optional in the Task Form, improving flexiblity when creating tasks.
+- **Improved Mobile UI**: Optimized category chips with horizontal scroll and better color visibility for mobile devices.
