@@ -114,11 +114,12 @@ export class TaskFormModalComponent implements OnInit {
 
   submit(): void {
     if (!this.title().trim()) return;
+    const categoryId = this.selectedCategoryId() ?? undefined;
     const data: TaskFormData = {
       title: this.title().trim(),
       description: this.description().trim(),
-      categoryId: this.selectedCategoryId() ?? undefined,
-      task: this.task ? { ...this.task, title: this.title().trim(), description: this.description().trim(), categoryId: this.selectedCategoryId() ?? undefined } : undefined,
+      categoryId: categoryId as string | undefined,
+      task: this.task ? { ...this.task, title: this.title().trim(), description: this.description().trim(), categoryId: categoryId as string | undefined } : undefined,
     };
     this.modalCtrl.dismiss(data);
   }

@@ -101,7 +101,8 @@ export class TaskListComponent implements OnInit {
     if (data.task) {
       this.taskService.updateTask(data.task).subscribe();
     } else {
-      this.taskService.addTask(data).subscribe();
+      const { title, description, categoryId } = data;
+      this.taskService.addTask({ title, description, categoryId }).subscribe();
     }
   }
 
