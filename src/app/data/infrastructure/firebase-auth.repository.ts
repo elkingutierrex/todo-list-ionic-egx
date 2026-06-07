@@ -32,7 +32,7 @@ export class FirebaseAuthRepository extends AuthRepository {
 
     createUser(email: string): Observable<User> {
         const usersRef = collection(this.db, this.collectionName);
-        const newUser: Omit<User, 'id'> = { email };
+        const newUser: Omit<User, 'id'> = { email, role: 'USER' };
 
         return from(addDoc(usersRef, newUser)).pipe(
             map(docRef => ({ id: docRef.id, ...newUser } as User))

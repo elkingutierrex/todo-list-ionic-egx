@@ -1,5 +1,5 @@
 import { Injectable, signal, computed, effect } from '@angular/core';
-import { Notification } from '../../domain/models/notification.model';
+import { Notification } from '../../core/models/notification.model';
 import { Subject, interval } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 

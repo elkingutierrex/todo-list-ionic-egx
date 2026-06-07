@@ -1,42 +1,56 @@
-<div class="login-wrapper">
-  <div class="glass-card">
-    <div class="logo-box">
-      <div class="icon-avatar">✦</div>
-    </div>
-    <h2 class="title">Welcome Back</h2>
-    <p class="subtitle">Sign in to access your notification dashboard</p>
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Welcome</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-    <form class="login-form" (submit)="onSubmit($event)">
-      <div class="input-group">
-        <label for="email">Email Address</label>
-        <input 
-          id="email" 
-          type="email" 
-          [formControl]="emailControl" 
-          placeholder="name@example.com" 
-          required 
-          class="premium-input"
-        />
-        @if (emailControl.hasError('email') && !emailControl.hasError('required') && emailControl.touched) {
-          <span class="error-text">Please enter a valid email address</span>
-        }
-        @if (emailControl.hasError('required') && emailControl.touched) {
-          <span class="error-text">Email is required</span>
-        }
-      </div>
+<ion-content class="ion-padding ion-text-center">
+  <div class="login-container">
+    <img src="assets/logo.png" alt="Logo" class="logo-main" (error)="$event.target.src='https://ionicframework.com/docs/img/demos/avatar.svg'">
 
-      <button type="submit" class="btn-submit" [disabled]="emailControl.invalid || isLoading">
-        {{ isLoading ? 'Checking...' : 'Sign In' }}
-      </button>
-    </form>
+    <ion-card mode="ios">
+      <ion-card-header>
+        <ion-card-title>Login to TodoManager</ion-card-title>
+      </ion-card-header>
 
-    <div class="demo-accounts">
-      <p class="demo-title">Quick Demo Accounts:</p>
-      <div class="pill-group">
-        <button class="role-pill admin-pill" (click)="emailControl.setValue('admin@example.com'); onSubmit($event)">Admin</button>
-        <button class="role-pill user-pill" (click)="emailControl.setValue('user@example.com'); onSubmit($event)">User</button>
-        <button class="role-pill guest-pill" (click)="emailControl.setValue('guest@example.com'); onSubmit($event)">Guest</button>
-      </div>
-    </div>
+      <ion-card-content>
+        <form (submit)="onSubmit($event)">
+          <ion-item lines="full" class="ion-margin-bottom">
+            <ion-label position="stacked">Email Address</ion-label>
+            <ion-input
+              type="email"
+              placeholder="email@example.com"
+              [formControl]="emailControl"
+              autocomplete="email"
+              required>
+              <ion-icon slot="start" name="mail-outline" aria-hidden="true"></ion-icon>
+            </ion-input>
+          </ion-item>
+
+          @if (emailControl.invalid && (emailControl.dirty || emailControl.touched)) {
+            <ion-text color="danger" class="ion-text-start">
+              @if (emailControl.errors?.['required']) { <p>Email is required.</p> }
+              @if (emailControl.errors?.['email']) { <p>Please enter a valid email.</p> }
+            </ion-text>
+          }
+
+          <ion-button
+            expand="block"
+            type="submit"
+            [disabled]="emailControl.invalid || isLoading"
+            class="ion-margin-top">
+            <ion-icon slot="start" name="log-in-outline"></ion-icon>
+            {{ isLoading ? 'Checking...' : 'Sign In' }}
+          </ion-button>
+        </form>
+
+        <div class="ion-margin-top ion-text-center">
+          <p style="font-size: 0.8rem; color: var(--ion-color-medium)">Try: admin@example.com</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
   </div>
-</div>
+
+  <ion-loading [isOpen]="isLoading" message="Please wait..."></ion-loading>
+</ion-content>
+

@@ -1,0 +1,79 @@
+# Decisions Log
+
+## DEC-001
+
+Date: 2026-06-07
+
+Decision: Integrate Ionic into existing Angular 21 project rather than scaffold from scratch.
+
+Reason: The codebase already contains domain models, repository abstractions (Task, Auth), Firebase and Mock implementations, and Clean Architecture folder structure. Rebuilding from scratch would waste existing quality work.
+
+Alternatives:
+- Option A: Re-scaffold entire project using `ionic start`
+- Option B: Add Ionic packages to existing Angular project
+
+Final Decision: **Option B** — Additive integration. Preserves existing code. Less risk.
+
+---
+
+## DEC-002
+
+Date: 2026-06-07
+
+Decision: Use `abstract class` (not TypeScript `interface`) for repository ports.
+
+Reason: Angular's Dependency Injection system requires injection tokens. Abstract classes serve as both the type contract and the DI token simultaneously, avoiding the need for separate `InjectionToken<T>` declarations.
+
+Alternatives:
+- Option A: `interface` + `InjectionToken<T>`
+- Option B: `abstract class` (self-token)
+
+Final Decision: **Option B** — Simpler DI, less boilerplate.
+
+---
+
+## DEC-003
+
+Date: 2026-06-07
+
+Decision: Use Angular Signals for all synchronous reactive state; RxJS only for Firebase streams.
+
+Reason: Signals have lower overhead than BehaviorSubjects for component rendering. Firebase returns Observables which are best converted to Signals at the service boundary via `toSignal()`.
+
+Alternatives:
+- Option A: Pure RxJS BehaviorSubject everywhere
+- Option B: Signals + `toSignal()` at boundary
+
+Final Decision: **Option B** — Better performance, simpler templates.
+
+---
+
+## DEC-004
+
+Date: 2026-06-07
+
+Decision: Persist Mock data in `localStorage` instead of in-memory arrays.
+
+Reason: In-memory mocks reset on page refresh, making it unusable for manual testing. localStorage persists data across refreshes, simulating real persistence reliably.
+
+Alternatives:
+- Option A: In-memory arrays (current implementation)
+- Option B: localStorage JSON serialization/deserialization
+
+Final Decision: **Option B** — Aligns with assessment requirement for local storage persistence.
+
+---
+
+## DEC-005
+
+Date: 2026-06-07
+
+Decision: Category feature controlled by Firebase Remote Config flag `categoryFeatureEnabled`.
+
+Reason: Assessment explicitly requires feature flags from Remote Config. Category management is the most significant new feature, making it the perfect candidate.
+
+Alternatives:
+- Option A: Hard-code categories as always-visible
+- Option B: Guard category UI with Remote Config boolean flag
+
+Final Decision: **Option B** — Meets assessment requirement and demonstrates Remote Config usage.

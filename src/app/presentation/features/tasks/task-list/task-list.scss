@@ -1,79 +1,55 @@
-// task-list.scss
-
-.page-container {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    display: flex;
-    flex-direction: column;
+ion-item.completed {
+  --color: var(--ion-color-medium);
 }
 
-.content {
-    flex: 1;
-    padding: .5rem;
-    display: flex;
-    justify-content: center;
+.strikethrough {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
 
-    .task-manager-container {
-        width: 100%;
-        max-width: 800px;
-        display: flex;
-        flex-direction: column;
-        gap: .5rem;
+.category-filter {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 8px 12px;
+  gap: 6px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ion-chip {
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+
+    &.selected {
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
+  }
 }
 
-.custom-field {
-    ::ng-deep .mat-mdc-text-field-wrapper {
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-}
-
-.task-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.category-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+  vertical-align: middle;
 }
 
 .empty-state {
-    text-align: center;
-    padding: 3rem;
-    color: #888;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-
-    h3 {
-        margin: 0;
-        color: #555;
-    }
-}
-
-.task-item-wrapper {
-    animation: slideIn 0.3s ease-out forwards;
-    opacity: 0;
-
-    @for $i from 1 through 10 {
-        &:nth-child(#{$i}) {
-            animation-delay: #{$i * 0.1}s;
-        }
-    }
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.task-header {
   display: flex;
-    align-items: anchor-center;
-    justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  gap: 12px;
+
+  p {
+    font-size: 1rem;
+    text-align: center;
+  }
 }

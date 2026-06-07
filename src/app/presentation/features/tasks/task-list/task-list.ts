@@ -1,151 +1,127 @@
-import { Component, inject, OnInit, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatCardModule } from '@angular/material/card';
-import { AuthService } from '../../../../core/services/auth.service';
+import { Component, inject, OnInit, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
+import {
+  IonHeader, IonToolbar, IonTitle, IonContent, IonFab, IonFabButton,
+  IonIcon, IonList, IonItemSliding, IonItem, IonLabel, IonItemOptions,
+  IonItemOption, IonBadge, IonButton, IonButtons, IonChip, IonSearchbar,
+  IonSkeletonText, IonNote, IonText, AlertController, ModalController
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { add, trash, create, checkmarkCircle, ellipseOutline, logOut, pricetag, filter } from 'ionicons/icons';
 import { TaskService } from '../../../../core/services/task.service';
-import { TaskItemComponent } from '../components/task-item/task-item';
+import { CategoryService } from '../../../../core/services/category.service';
+import { FeatureFlagService } from '../../../../core/services/feature-flag.service';
+import { AuthService } from '../../../../core/services/auth.service';
 import { Task } from '../../../../core/models/task.model';
-import { LoadingService } from '../../../../core/services/loading.service';
-import { Navbar } from '../../../shared/components/navbar/navbar';
-import { TaskDialogComponent, TaskDialogData } from '../components/task-dialog/task-dialog';
-import { SearchFilterComponent, SortOption } from '../../../shared/components/search-filter/search-filter';
-import Swal from 'sweetalert2';
+import { FEATURE_FLAG_KEYS } from '../../../../core/models/feature-flag.model';
+import { TaskFormModalComponent } from '../task-form-modal/task-form-modal.component';
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    CommonModule,
-    MatButtonModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatDialogModule,
-    MatCardModule,
-    TaskItemComponent,
-    Navbar,
-    SearchFilterComponent
+    IonHeader, IonToolbar, IonTitle, IonContent, IonFab, IonFabButton,
+    IonIcon, IonList, IonItemSliding, IonItem, IonLabel, IonItemOptions,
+    IonItemOption, IonBadge, IonButton, IonButtons, IonChip,
+    IonSkeletonText, IonNote, IonText
   ],
   templateUrl: './task-list.html',
-  styleUrl: './task-list.scss'
+  styleUrl: './task-list.scss',
 })
 export class TaskListComponent implements OnInit {
-  private authService = inject(AuthService);
   private taskService = inject(TaskService);
-  private dialog = inject(MatDialog);
-  private loadingService = inject(LoadingService);
+  private categoryService = inject(CategoryService);
+  private featureFlagService = inject(FeatureFlagService);
+  private authService = inject(AuthService);
+  private alertCtrl = inject(AlertController);
+  private modalCtrl = inject(ModalController);
+  private router = inject(Router);
 
-  // Raw tasks from service
-  private tasksSignal = this.taskService.tasks;
-
-  // Local state for filter/sort
-  searchTerm = signal('');
-  currentSort = signal<SortOption>('date-desc');
-
-  // Computed filtered and sorted tasks
-  filteredTasks = computed(() => {
-    const tasks = this.tasksSignal();
-    const term = this.searchTerm().toLowerCase();
-    const sort = this.currentSort();
-
-    // 1. Filter
-    let result = tasks.filter(t =>
-      t.title.toLowerCase().includes(term) ||
-      (t.description && t.description.toLowerCase().includes(term))
-    );
-
-    // 2. Sort
-    result = [...result].sort((a, b) => {
-      switch (sort) {
-        case 'date-desc':
-          return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-        case 'date-asc':
-          return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
-        case 'alphabetical':
-          return a.title.localeCompare(b.title);
-        case 'status':
-          return a.isCompleted === b.isCompleted ? 0 : a.isCompleted ? 1 : -1;
-        default:
-          return 0;
-      }
-    });
-
-    return result;
-  });
-
+  tasks = this.taskService.filteredTasks;
+  categories = this.categoryService.categories;
+  pendingCount = this.taskService.pendingCount;
+  selectedCategoryId = this.taskService.selectedCategoryId;
   currentUser = this.authService.currentUser;
+  categoryMap = this.categoryService.categoryMap;
+  isLoading = signal(true);
 
-  ngOnInit() {
-    this.loadingService.show();
+  categoriesEnabled = computed(() =>
+    this.featureFlagService.isEnabled(FEATURE_FLAG_KEYS.CATEGORY_FEATURE)
+  );
+
+  constructor() {
+    addIcons({ add, trash, create, checkmarkCircle, ellipseOutline, logOut, pricetag, filter });
+  }
+
+  ngOnInit(): void {
     this.taskService.loadTasks();
-    setTimeout(() => this.loadingService.hide(), 1000);
+    this.featureFlagService.loadFlags();
+    if (this.featureFlagService.isEnabled(FEATURE_FLAG_KEYS.CATEGORY_FEATURE)) {
+      this.categoryService.loadCategories();
+    }
+    setTimeout(() => this.isLoading.set(false), 600);
   }
 
-  onSearch(term: string) {
-    this.searchTerm.set(term);
+  filterByCategory(id: string | null): void {
+    this.taskService.filterByCategory(id);
   }
 
-  onSortChange(sort: SortOption) {
-    this.currentSort.set(sort);
-  }
-
-  onToggle(task: Task) {
+  onToggle(task: Task): void {
     this.taskService.toggleTaskCompletion(task).subscribe();
   }
 
-  onDelete(task: Task) {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.loadingService.show();
-        this.taskService.deleteTask(task.id).subscribe(() => {
-          this.loadingService.hide();
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
-            icon: "success"
-          });
-
-        });
-
-      }
+  async onDelete(task: Task): Promise<void> {
+    const alert = await this.alertCtrl.create({
+      header: 'Delete Task',
+      message: `Are you sure you want to delete "${task.title}"?`,
+      buttons: [
+        { text: 'Cancel', role: 'cancel' },
+        {
+          text: 'Delete',
+          role: 'destructive',
+          handler: () => this.taskService.deleteTask(task.id).subscribe(),
+        },
+      ],
     });
+    await alert.present();
   }
 
-  onEdit(task: Task) {
-    const dialogRef = this.dialog.open(TaskDialogComponent, {
-      panelClass: 'glass-dialog-panel',
-      data: { task } as TaskDialogData
+  async openTaskModal(task?: Task): Promise<void> {
+    const modal = await this.modalCtrl.create({
+      component: TaskFormModalComponent,
+      componentProps: { task, categories: this.categories() },
+      breakpoints: [0, 0.75, 1],
+      initialBreakpoint: 0.75,
     });
+    await modal.present();
+    const { data } = await modal.onWillDismiss();
+    if (!data) return;
 
-    dialogRef.afterClosed().subscribe((result: Task | undefined) => {
-      if (result) {
-        this.loadingService.show();
-        this.taskService.updateTask(result).subscribe(() => this.loadingService.hide());
-      }
-    });
+    if (data.task) {
+      this.taskService.updateTask(data.task).subscribe();
+    } else {
+      this.taskService.addTask(data).subscribe();
+    }
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(TaskDialogComponent, {
-      panelClass: 'glass-dialog-panel'
+  async logout(): Promise<void> {
+    const alert = await this.alertCtrl.create({
+      header: 'Logout',
+      message: 'Are you sure you want to logout?',
+      buttons: [
+        { text: 'Cancel', role: 'cancel' },
+        { text: 'Logout', handler: () => this.router.navigate(['/login']) },
+      ],
     });
+    await alert.present();
+  }
 
-    dialogRef.afterClosed().subscribe((result: { title: string; description: string } | undefined) => {
-      if (result) {
-        this.loadingService.show();
-        this.taskService.addTask(result).subscribe(() => this.loadingService.hide());
-      }
-    });
+  navigateToCategories(): void {
+    this.router.navigate(['/categories']);
+  }
+
+  trackByTaskId(_: number, task: Task): string {
+    return task.id;
   }
 }

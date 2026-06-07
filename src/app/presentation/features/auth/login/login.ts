@@ -2,16 +2,11 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonInput, IonButton, IonIcon, IonText, IonLoading } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { logInOutline, personAddOutline, mailOutline } from 'ionicons/icons';
 import { AuthService } from '../../../../core/services/auth.service';
-import { LoadingService } from '../../../../core/services/loading.service';
 import Swal from 'sweetalert2';
-import { NgxSpinnerModule } from 'ngx-spinner';
-
 
 @Component({
   selector: 'app-login',
@@ -19,12 +14,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatDialogModule,
-    NgxSpinnerModule
+    IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonInput, IonButton, IonIcon, IonText, IonLoading
   ],
   templateUrl: './login.html',
   styleUrl: './login.scss'
@@ -35,6 +25,10 @@ export class LoginComponent {
 
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   isLoading = false;
+
+  constructor() {
+    addIcons({ logInOutline, personAddOutline, mailOutline });
+  }
 
 
 
@@ -50,7 +44,7 @@ export class LoginComponent {
         this.isLoading = false;
         if (user) {
           this.authService.setCurrentUser(user);
-          this.router.navigate(['/notifications']);
+          this.router.navigate(['/tasks']);
         } else {
           this.promptCreateUser(email);
         }
@@ -91,7 +85,7 @@ export class LoginComponent {
               showConfirmButton: false,
               timer: 1500
             }).then(() => {
-              this.router.navigate(['/notifications']);
+              this.router.navigate(['/tasks']);
             });
           },
           error: () => {
