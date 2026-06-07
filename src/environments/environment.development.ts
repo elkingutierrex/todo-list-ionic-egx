@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  useMock: true,
+  useMock: false,
   apiUrl: 'http://localhost:3000',
   firebase: {
     apiKey: "AIzaSyCJw_PYLFQxOH3rs5W2Vz-V5nD59CN_-Ug",

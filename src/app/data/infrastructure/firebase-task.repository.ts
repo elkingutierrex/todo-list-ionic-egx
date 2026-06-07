@@ -52,9 +52,12 @@ export class FirebaseTaskRepository extends TaskRepository {
 
     updateTask(task: Task): Observable<Task> {
         const taskDoc = doc(this.db, this.collectionName, task.id);
-        const { id, createdAt, ...updateData } = task; // Exclude ID and ideally createdAt from update unless needed
+        const { id, createdAt, ...updateData } = task; 
 
-        return from(updateDoc(taskDoc, updateData)).pipe(
+        return from(updateDoc(taskDoc, { 
+            ...updateData,
+            // We usually don't update createdAt, but we ensure it stays a Date if passed
+        })).pipe(
             map(() => task)
         );
     }
