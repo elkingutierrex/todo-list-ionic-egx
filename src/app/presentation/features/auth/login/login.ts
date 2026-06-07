@@ -2,11 +2,14 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonInput, IonButton, IonIcon, IonText, IonLoading } from '@ionic/angular/standalone';
+import {
+  IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader,
+  IonCardTitle, IonCardContent, IonItem, IonLabel, IonInput, IonButton,
+  IonIcon, IonText, IonLoading, AlertController, ToastController
+} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logInOutline, personAddOutline, mailOutline } from 'ionicons/icons';
 import { AuthService } from '../../../../core/services/auth.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +17,9 @@ import Swal from 'sweetalert2';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonInput, IonButton, IonIcon, IonText, IonLoading
+    IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader,
+    IonCardTitle, IonCardContent, IonItem, IonLabel, IonInput, IonButton,
+    IonIcon, IonText, IonLoading
   ],
   templateUrl: './login.html',
   styleUrl: './login.scss'
@@ -22,6 +27,8 @@ import Swal from 'sweetalert2';
 export class LoginComponent {
   private authService = inject(AuthService);
   private router = inject(Router);
+  private alertCtrl = inject(AlertController);
+  private toastCtrl = inject(ToastController);
 
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   isLoading = false;
@@ -49,50 +56,66 @@ export class LoginComponent {
           this.promptCreateUser(email);
         }
       },
-      error: (err) => {
-        console.log('error');
+      error: async (err) => {
         this.isLoading = false;
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'An error occurred while connecting to the server.',
+        const alert = await this.alertCtrl.create({
+          header: 'Connection Error',
+          message: 'An error occurred while connecting to the server.',
+          buttons: ['OK']
         });
+        await alert.present();
         console.error(err);
       }
     });
   }
 
-  promptCreateUser(email: string) {
-    Swal.fire({
-      title: "Create a new user",
-      text: "This mail doesn't have registered, do you want to register it?",
-      icon: "question",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, register it!"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.isLoading = true;
-        this.authService.createUser(email).subscribe({
-          next: (user) => {
-            this.isLoading = false;
-            this.authService.setCurrentUser(user);
-            Swal.fire({
-              title: "Ok!",
-              text: "Your can create tasks!.",
-              icon: "success",
-              showConfirmButton: false,
-              timer: 1500
-            }).then(() => {
-              this.router.navigate(['/tasks']);
-            });
-          },
-          error: () => {
-            this.isLoading = false;
-            Swal.fire('Error', 'Could not create user', 'error');
+  async promptCreateUser(email: string) {
+    const alert = await this.alertCtrl.create({
+      header: 'Create a new user',
+      message: `The email <b>${email}</b> is not registered. Do you want to register it now?`,
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary'
+        },
+        {
+          text: 'Yes, register it!',
+          handler: () => {
+            this.registerUser(email);
           }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  private registerUser(email: string) {
+    this.isLoading = true;
+    this.authService.createUser(email).subscribe({
+      next: async (user) => {
+        this.isLoading = false;
+        this.authService.setCurrentUser(user);
+        
+        const toast = await this.toastCtrl.create({
+          message: 'User registered successfully!',
+          duration: 2000,
+          color: 'success',
+          position: 'bottom'
         });
+        await toast.present();
+        
+        this.router.navigate(['/tasks']);
+      },
+      error: async () => {
+        this.isLoading = false;
+        const alert = await this.alertCtrl.create({
+          header: 'Error',
+          message: 'Could not create user. Please try again.',
+          buttons: ['OK']
+        });
+        await alert.present();
       }
     });
   }
