@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import {
   IonHeader, IonToolbar, IonTitle, IonContent, IonFab, IonFabButton,
   IonIcon, IonList, IonItemSliding, IonItem, IonLabel, IonItemOptions,
-  IonItemOption, IonBadge, IonButton, IonButtons, IonChip, IonSearchbar,
+  IonItemOption, IonBadge, IonButton, IonButtons, IonChip,
   IonSkeletonText, IonNote, IonText, AlertController, ModalController
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
