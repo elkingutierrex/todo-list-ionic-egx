@@ -79,14 +79,20 @@
                 }
               </ion-label>
               
-              <ion-buttons slot="end">
-                <ion-button (click)="openTaskModal(task); $event.stopPropagation()" color="primary" fill="clear">
+              <ion-buttons slot="end" class="desktop-actions">
+                <ion-button (click)="openTaskModal(task); $event.stopPropagation()" color="primary" fill="clear" title="Edit Task">
                   <ion-icon name="create" slot="icon-only" />
+                </ion-button>
+                <ion-button (click)="onDelete(task); $event.stopPropagation()" color="danger" fill="clear" title="Delete Task">
+                  <ion-icon name="trash" slot="icon-only" />
                 </ion-button>
               </ion-buttons>
             </ion-item>
 
             <ion-item-options side="end">
+              <ion-item-option color="primary" (click)="openTaskModal(task)">
+                <ion-icon slot="icon-only" name="create" />
+              </ion-item-option>
               <ion-item-option color="danger" (click)="onDelete(task)" style="border-radius: 0 20px 20px 0;">
                 <ion-icon slot="icon-only" name="trash" />
               </ion-item-option>

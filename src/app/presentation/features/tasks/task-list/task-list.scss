@@ -138,3 +138,13 @@ ion-header {
   font-weight: 700;
   font-size: 0.75rem;
 }
+
+.desktop-actions {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .desktop-actions {
+    display: flex;
+  }
+}
