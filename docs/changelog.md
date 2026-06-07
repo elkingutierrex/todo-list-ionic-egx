@@ -29,7 +29,9 @@
 - Capacitor Android and iOS configuration
 - `/docs` documentation structure
 
-### Changed
-- Replaced Angular Material layout with Ionic components
-- Enhanced Task model with optional `categoryId`
-- Replaced in-memory mock arrays with localStorage persistence
+### Fixed
+- Build Fail: Fixed `super()` calls in derived repository classes.
+- Build Fail: Fixed bundle budget limits in `angular.json` for Ionic components.
+- Build Fail: Corrected `Role` model import paths across services and directives.
+- UI: Migrated Login component to use Ionic components and centralized navigation to `/tasks`.
+- Authentication: Fixed user creation logic to include default 'USER' role.

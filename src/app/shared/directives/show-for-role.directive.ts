@@ -1,5 +1,5 @@
 import { Directive, Input, TemplateRef, ViewContainerRef, effect, inject } from '@angular/core';
-import { RoleService } from '../../infrastructure/services/role.service';
+import { RoleService } from '../../core/services/role.service';
 import { Role } from '../../core/models/role.model';
 
 @Directive({
