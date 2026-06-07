@@ -1,13 +1,18 @@
 .login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
   max-width: 450px;
-  margin: 40px auto;
+  margin: 0 auto;
   padding: 0 16px;
   
   .logo-main {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 24px;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 32px;
     border-radius: 20%;
+    display: block;
   }
 }
 
