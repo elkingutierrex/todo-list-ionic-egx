@@ -107,8 +107,16 @@ Final Decision: Adjusted budgets to accommodate framework overhead.
 
 Date: 2026-06-07
 
-Decision: Replace SweetAlert2 with Ionic AlertController and ToastController.
-
-Reason: SweetAlert2 injected global styles (like `height: auto`) that conflicted with Ionic's strict viewport-filling layout, causing visual glitches and overlapping windows. Using native Ionic controllers ensures UI consistency, better mobile UX, and removes an unnecessary heavy dependency.
-
 Final Decision: Native Ionic components are the preferred choice for all dialogs and notifications.
+
+---
+
+## DEC-009
+
+Date: 2026-06-07
+
+Decision: Standardized Modal Dimensions for Desktop using CSS overrides and removing sheet breakpoints.
+
+Reason: Ionic sheet modals with breakpoints were causing the Task Form to stretch or collapse inconsistently on desktop browsers (rendering as a sliver or a full-width column). Standardizing dimensions to 600px width/550px height for desktop while maintaining responsive full-screen behavior for mobile ensures all input fields (Title, Description, Category) are always visible and accessible.
+
+Final Decision: Desktop-specific CSS overrides for `.premium-modal` and removal of `initialBreakpoint` on large screens.

@@ -22,7 +22,10 @@
 - [ ] Migrate `localStorage` to `@capacitor/preferences` for native persistence
 - [ ] Implement Firebase Security Rules in Firestore
 - [ ] Configure Remote Config parameters in Firebase Console
-- [ ] Generate native assets (Icons/Splash) using `@capacitor/assets`
+- [x] Generate native assets (Icons/Splash) using `@capacitor/assets`
+- [x] Premium UI Modernization (Indigo/Slate theme, Glassmorphism, Micro-animations)
+- [x] Enhanced Contrast & Accessibility (WCAG compliant colors)
+- [x] Stable Responsive Modal Layout for Task Form
 
 ## Bugs
 

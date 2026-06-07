@@ -37,3 +37,16 @@
 - Authentication: Fixed user creation logic to include default 'USER' role.
 - UI: Removed SweetAlert2 and replaced with native Ionic Alert/Toast to fix overlapping and layout issues.
 - Git: Tagged stable version as `v1.1.0`.
+
+## v1.2.0 — 2026-06-07 (Latest)
+
+### Added
+- **Logo Integration**: New custom developer-centric logo for "elkingutierrex" integrated into Login and Header.
+- **Premium UI Theme**: Modern Indigo/Slate design system with glassmorphism and card-based task list.
+- **High Contrast Mode**: Unified typography with strict contrast ratios (Slate 800/900) for better accessibility.
+
+### Fixed
+- **Modal Stretching**: Redesigned Task Form Modal to use a stable fixed-size dialog on desktop (600x550px) and full-screen on mobile, preventing viewport stretching.
+- **UI "Black Blocks"**: Fixed an issue where input fields were inheriting dark background styles, ensuring a clean and user-friendly appearance.
+- **Task Creation**: Resolved final data handling issues in the task form.
+- **Git History**: Consolidated legacy commits into a professional starting point, preserving today's step-by-step history.
