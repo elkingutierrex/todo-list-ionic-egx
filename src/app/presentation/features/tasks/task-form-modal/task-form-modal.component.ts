@@ -27,65 +27,103 @@ export interface TaskFormData {
     IonInput, IonTextarea, IonSelect, IonSelectOption, IonButton, IonButtons, IonIcon
   ],
   template: `
-    <ion-header>
-      <ion-toolbar color="primary">
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-button (click)="dismiss()">
+          <ion-button (click)="dismiss()" color="medium">
             <ion-icon slot="icon-only" name="close" />
           </ion-button>
         </ion-buttons>
         <ion-title>{{ task ? 'Edit Task' : 'New Task' }}</ion-title>
         <ion-buttons slot="end">
-          <ion-button [strong]="true" (click)="submit()" [disabled]="!title()">
+          <ion-button [strong]="true" (click)="submit()" [disabled]="!title()" color="primary">
             Save
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="form-content">
-      <ion-item>
-        <ion-label position="stacked">Title <span class="required">*</span></ion-label>
-        <ion-input
-          [ngModel]="title()"
-          (ngModelChange)="title.set($event)"
-          placeholder="What needs to be done?"
-          maxlength="100"
-          autocapitalize="sentences" />
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="stacked">Description</ion-label>
-        <ion-textarea
-          [ngModel]="description()"
-          (ngModelChange)="description.set($event)"
-          placeholder="Add details (optional)"
-          rows="3"
-          autocapitalize="sentences" />
-      </ion-item>
-
-      @if (categories.length > 0) {
-        <ion-item>
-          <ion-label position="stacked">Category</ion-label>
-          <ion-select
-            [ngModel]="selectedCategoryId()"
-            (ngModelChange)="selectedCategoryId.set($event)"
-            placeholder="Select category"
-            interface="action-sheet">
-            <ion-select-option [value]="null">None</ion-select-option>
-            @for (cat of categories; track cat.id) {
-              <ion-select-option [value]="cat.id">{{ cat.name }}</ion-select-option>
-            }
-          </ion-select>
+    <ion-content class="ion-padding">
+      <div class="form-wrapper">
+        <ion-item lines="none" class="input-item">
+          <ion-label position="stacked">Title <span class="required">*</span></ion-label>
+          <ion-input
+            [ngModel]="title()"
+            (ngModelChange)="title.set($event)"
+            placeholder="What needs to be done?"
+            maxlength="100"
+            autocapitalize="sentences" />
         </ion-item>
-      }
+
+        <ion-item lines="none" class="input-item">
+          <ion-label position="stacked">Description</ion-label>
+          <ion-textarea
+            [ngModel]="description()"
+            (ngModelChange)="description.set($event)"
+            placeholder="Add details (optional)"
+            rows="4"
+            autocapitalize="sentences" />
+        </ion-item>
+
+        @if (categories.length > 0) {
+          <ion-item lines="none" class="input-item">
+            <ion-label position="stacked">Category</ion-label>
+            <ion-select
+              [ngModel]="selectedCategoryId()"
+              (ngModelChange)="selectedCategoryId.set($event)"
+              placeholder="Select category"
+              interface="action-sheet">
+              <ion-select-option [value]="null">None</ion-select-option>
+              @for (cat of categories; track cat.id) {
+                <ion-select-option [value]="cat.id">{{ cat.name }}</ion-select-option>
+              }
+            </ion-select>
+          </ion-item>
+        }
+      </div>
     </ion-content>
   `,
   styles: [`
-    .form-content ion-item {
-      --padding-start: 20px;
-      --inner-padding-end: 20px;
-      margin-bottom: 4px;
+    ion-header {
+      --background: var(--ion-card-background);
+      padding-top: 8px;
+    }
+    ion-toolbar {
+      --background: var(--ion-card-background);
+      --color: var(--ion-color-dark);
+      ion-title {
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+    }
+    ion-content {
+      --background: var(--ion-card-background);
+      --padding-top: 20px;
+    }
+    .form-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-bottom: 24px;
+    }
+    .input-item {
+      --background: var(--ion-background-color);
+      --padding-start: 16px;
+      --padding-end: 16px;
+      --border-radius: 12px;
+      margin-bottom: 8px;
+      
+      ion-label {
+        font-weight: 600;
+        color: var(--ion-color-medium);
+        margin-bottom: 8px;
+      }
+      
+      ion-input, ion-textarea, ion-select {
+        --padding-top: 12px;
+        --padding-bottom: 12px;
+        font-size: 1rem;
+      }
     }
     .required { color: var(--ion-color-danger); }
   `],
