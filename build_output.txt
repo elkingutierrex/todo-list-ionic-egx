@@ -1,0 +1,149 @@
+﻿[33mΓ¥»[39m Building...
+[32mΓ£ö[39m Building...
+Application bundle generation failed. [15.492 seconds] - 2026-06-07T14:35:51.022Z
+
+node.exe : [1m[33m[33mΓû▓ 
+[43;33m[[43;30mWARNING[43;33
+m][0m [1mNG8113: 
+ShowForRoleDirective is not 
+used within the template of 
+NotificationListComponent[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo          : 
+    NotSpecified: ([1m[33m  
+  [33mΓ...r-compiler][0m:   
+ String) [], RemoteExcepti    
+on
+    + FullyQualifiedErrorId : 
+    NativeCommandError
+ 
+
+    src/app/features/notificat
+ions/components/notification-l
+ist/notification-list.componen
+t.ts:11:26:
+[37m      11 Γöé   imports: 
+[CommonModule, [32mShowForRol
+eDirective[37m, DatePipe],
+         Γò╡                  
+         
+[32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;30mWARN
+ING[43;33m][0m [1mNG8113: 
+IonSearchbar is not used 
+within the template of 
+TaskListComponent[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/presentation/featu
+res/tasks/task-list/task-list.
+ts:26:61:
+[37m      26 Γöé 
+...temOption, IonBadge, 
+IonButton, IonButtons, 
+IonChip, 
+[32mIonSearchbar[37m,
+         Γò╡                  
+                              
+         [32m~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;
+97mERROR[41;31m][0m 
+[1mTS2741: Property 'role' 
+is missing in type '{ email: 
+string; }' but required in 
+type 'Omit<User, "id">'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/data/infrastructur
+e/firebase-auth.repository.ts:
+35:14:
+[37m      35 Γöé         
+const [32mnewUser[37m: 
+Omit<User, 'id'> = { email };
+         Γò╡               
+[32m~~~~~~~[0m
+
+  'role' is declared here.
+
+    src/app/core/models/user.m
+odel.ts:6:4:
+[37m      6 Γöé     
+[32mrole[37m: Role;
+        Γò╡     [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR
+[41;31m][0m [1mTS2307: 
+Cannot find module '../../doma
+in/models/notification.model' 
+or its corresponding type 
+declarations.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/infrastructure/ser
+vices/notification.service.ts:
+2:29:
+[37m      2 Γöé import { 
+Notification } from [32m'../.
+./domain/models/notification.m
+odel'[37m;
+        Γò╡                   
+           [32m~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR
+[41;31m][0m [1mTS2307: 
+Cannot find module '../../doma
+in/models/role.model' or its 
+corresponding type 
+declarations.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/infrastructure/ser
+vices/role.service.ts:2:21:
+[37m      2 Γöé import { 
+Role } from [32m'../../domain
+/models/role.model'[37m;
+        Γò╡                   
+   [32m~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR
+[41;31m][0m [1mTS2307: 
+Cannot find module '../../doma
+in/models/role.model' or its 
+corresponding type 
+declarations.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/shared/directives/
+show-for-role.directive.ts:3:2
+1:
+[37m      3 Γöé import { 
+Role } from [32m'../../domain
+/models/role.model'[37m;
+        Γò╡                   
+   [32m~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~[0m
+
+[39m[22m

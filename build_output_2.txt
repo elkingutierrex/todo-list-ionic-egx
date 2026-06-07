@@ -1,0 +1,115 @@
+﻿[33mΓ¥»[39m Building...
+[32mΓ£ö[39m Building...
+[1mInitial chunk files[22m  [2m | [22m[1mNames[22m                  [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mchunk-PWUV3UZM.js[39m    [2m | [22m[2m-[22m                      [2m | [22m[36m705.23 kB[39m[2m | [22m              [36m109.49 kB[39m
+[32mmain-GYZHIG6F.js[39m     [2m | [22m[2mmain[22m                   [2m | [22m[36m313.40 kB[39m[2m | [22m               [36m83.83 kB[39m
+[32mchunk-L4P6YPJD.js[39m    [2m | [22m[2m-[22m                      [2m | [22m[36m133.52 kB[39m[2m | [22m               [36m39.50 kB[39m
+[32mchunk-RLPCJBTS.js[39m    [2m | [22m[2m-[22m                      [2m | [22m [36m79.57 kB[39m[2m | [22m               [36m18.74 kB[39m
+[32mstyles-SNOYWID7.css[39m  [2m | [22m[2mstyles[22m                 [2m | [22m [36m41.05 kB[39m[2m | [22m                [36m4.87 kB[39m
+[32mchunk-2EBG7KP6.js[39m    [2m | [22m[2m-[22m                      [2m | [22m [36m36.81 kB[39m[2m | [22m               [36m12.83 kB[39m
+[32mpolyfills-6ISPNSXF.js[39m[2m | [22m[2mpolyfills[22m              [2m | [22m [36m35.68 kB[39m[2m | [22m               [36m11.57 kB[39m
+[32mchunk-KWBZ2SFH.js[39m    [2m | [22m[2m-[22m                      [2m | [22m [36m10.16 kB[39m[2m | [22m                [36m2.62 kB[39m
+[32mchunk-NAC6JDDD.js[39m    [2m | [22m[2m-[22m                      [2m | [22m  [36m9.03 kB[39m[2m | [22m                [36m3.34 kB[39m
+[32mchunk-VGMJM2GZ.js[39m    [2m | [22m[2m-[22m                      [2m | [22m  [36m5.74 kB[39m[2m | [22m                [36m2.13 kB[39m
+[32mchunk-P5SLNYOL.js[39m    [2m | [22m[2m-[22m                      [2m | [22m  [36m2.60 kB[39m[2m | [22m                [36m1.02 kB[39m
+[32mchunk-2R6CW7ES.js[39m    [2m | [22m[2m-[22m                      [2m | [22m  [36m1.38 kB[39m[2m | [22m              [36m607 bytes[39m
+[32mchunk-2NIBOUWM.js[39m    [2m | [22m[2m-[22m                      [2m | [22m[36m998 bytes[39m[2m | [22m              [36m998 bytes[39m
+[32mchunk-6VLVDEW2.js[39m    [2m | [22m[2m-[22m                      [2m | [22m[36m976 bytes[39m[2m | [22m              [36m976 bytes[39m
+[32mchunk-5O46W626.js[39m    [2m | [22m[2m-[22m                      [2m | [22m[36m932 bytes[39m[2m | [22m              [36m932 bytes[39m
+[32mchunk-YDH4OINO.js[39m    [2m | [22m[2m-[22m                      [2m | [22m[36m833 bytes[39m[2m | [22m              [36m833 bytes[39m
+[32mchunk-I547WOKC.js[39m    [2m | [22m[2m-[22m                      [2m | [22m[36m544 bytes[39m[2m | [22m              [36m544 bytes[39m
+[32mchunk-US6FATWG.js[39m    [2m | [22m[2m-[22m                      [2m | [22m[36m103 bytes[39m[2m | [22m              [36m103 bytes[39m
+[32mchunk-YUNOCBLG.js[39m    [2m | [22m[2m-[22m                      [2m | [22m[36m103 bytes[39m[2m | [22m              [36m103 bytes[39m
+[32mchunk-NMFL75IO.js[39m    [2m | [22m[2m-[22m                      [2m | [22m [36m99 bytes[39m[2m | [22m               [36m99 bytes[39m
+[32mchunk-QRPLRA2F.js[39m    [2m | [22m[2m-[22m                      [2m | [22m [36m25 bytes[39m[2m | [22m               [36m25 bytes[39m
+
+[1m [22m                    [2m | [22m[1mInitial total[22m          [2m | [22m  [1m[91m1.38 MB[39m[22m[2m | [22m              [1m295.16 kB[22m
+
+[1mLazy chunk files[22m     [2m | [22m[1mNames[22m                  [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mchunk-XPZG7B7M.js[39m    [2m | [22m[2mbrowser[22m                [2m | [22m [36m67.78 kB[39m[2m | [22m               [36m17.79 kB[39m
+[32mchunk-RDEREP4U.js[39m    [2m | [22m[2mtask-list[22m              [2m | [22m [36m12.97 kB[39m[2m | [22m                [36m3.94 kB[39m
+[32mchunk-UY2VA4MS.js[39m    [2m | [22m[2mcategory-list-component[22m[2m | [22m  [36m7.52 kB[39m[2m | [22m                [36m2.60 kB[39m
+[32mchunk-RISRY2DM.js[39m    [2m | [22m[2m-[22m                      [2m | [22m  [36m5.47 kB[39m[2m | [22m                [36m1.41 kB[39m
+[32mchunk-GG6XAPOP.js[39m    [2m | [22m[2mlogin[22m                  [2m | [22m  [36m5.09 kB[39m[2m | [22m                [36m1.93 kB[39m
+[32mchunk-RKAQOITZ.js[39m    [2m | [22m[2mp-D5Ubpm7D[22m             [2m | [22m  [36m4.97 kB[39m[2m | [22m                [36m1.98 kB[39m
+[32mchunk-ZKLWV3RZ.js[39m    [2m | [22m[2mion-icon-entry[22m         [2m | [22m  [36m4.71 kB[39m[2m | [22m                [36m1.74 kB[39m
+[32mchunk-KEW5BDJG.js[39m    [2m | [22m[2m-[22m                      [2m | [22m  [36m3.46 kB[39m[2m | [22m                [36m1.63 kB[39m
+[32mchunk-PCHL4REG.js[39m    [2m | [22m[2mp-C4t5ymfq[22m             [2m | [22m  [36m1.62 kB[39m[2m | [22m              [36m747 bytes[39m
+[32mchunk-QH6ZW5MX.js[39m    [2m | [22m[2m-[22m                      [2m | [22m  [36m1.07 kB[39m[2m | [22m              [36m476 bytes[39m
+[32mchunk-AU5JU4JJ.js[39m    [2m | [22m[2mp-BmVRXR1y[22m             [2m | [22m[36m948 bytes[39m[2m | [22m              [36m948 bytes[39m
+[32mchunk-H4VTLZKX.js[39m    [2m | [22m[2mp-Sh0ICmPV[22m             [2m | [22m[36m710 bytes[39m[2m | [22m              [36m710 bytes[39m
+[32mchunk-JB2OQ4C4.js[39m    [2m | [22m[2mp-D7bSXQD3[22m             [2m | [22m[36m524 bytes[39m[2m | [22m              [36m524 bytes[39m
+[32mchunk-TC4U5O2Q.js[39m    [2m | [22m[2mp-D6Ynv7Xh[22m             [2m | [22m[36m404 bytes[39m[2m | [22m              [36m404 bytes[39m
+[32mchunk-WBRMKQAD.js[39m    [2m | [22m[2mp-Bz0dSlXZ[22m             [2m | [22m[36m286 bytes[39m[2m | [22m              [36m286 bytes[39m
+[2m...and 3 more lazy chunks files. Use "--verbose" to show all the files.[22m
+
+Application bundle generation failed. [18.925 seconds] - 2026-06-07T14:39:32.679Z
+
+node.exe : [1m[33m[33mΓû▓ 
+[43;33m[[43;30mWARNING[43;33
+m][0m [1mNG8113: 
+ShowForRoleDirective is not 
+used within the template of 
+NotificationListComponent[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo          : 
+    NotSpecified: ([1m[33m  
+  [33mΓ...r-compiler][0m:   
+ String) [], RemoteExcepti    
+on
+    + FullyQualifiedErrorId : 
+    NativeCommandError
+ 
+
+    src/app/features/notificat
+ions/components/notification-l
+ist/notification-list.componen
+t.ts:11:26:
+[37m      11 Γöé   imports: 
+[CommonModule, [32mShowForRol
+eDirective[37m, DatePipe],
+         Γò╡                  
+         
+[32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;30mWARN
+ING[43;33m][0m [1mbundle 
+initial exceeded maximum 
+budget. Budget 500.00 kB was 
+not met by 878.78 kB with a 
+total of 1.38 MB.[0m
+
+
+[33mΓû▓ [43;33m[[43;30mWARN
+ING[43;33m][0m [1mModule 
+'sweetalert2' used by 'src/app
+/presentation/features/auth/lo
+gin/login.ts' is not ESM[0m
+
+  CommonJS or AMD 
+dependencies can cause 
+optimization bailouts.
+  For more information see: [
+4mhttps://angular.dev/tools/cl
+i/build#configuring-commonjs-d
+ependencies[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;
+97mERROR[41;31m][0m 
+[1mbundle initial exceeded 
+maximum budget. Budget 1.00 
+MB was not met by 378.78 kB 
+with a total of 1.38 MB.[0m
+
+[39m[22m

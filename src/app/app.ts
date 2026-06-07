@@ -1,16 +1,14 @@
-import { Component, signal, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { NgxSpinnerModule } from 'ngx-spinner';
-import { NotificationListComponent } from './features/notifications/components/notification-list/notification-list.component';
+import { Component } from '@angular/core';
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgxSpinnerModule, NotificationListComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  imports: [IonApp, IonRouterOutlet],
+  template: `
+    <ion-app>
+      <ion-router-outlet />
+    </ion-app>
+  `,
 })
-export class App {
-  protected readonly title = signal('angular-task-challenge');
-}
+export class AppComponent {}

@@ -1,23 +1,25 @@
 import { Routes } from '@angular/router';
-
 import { authGuard } from './core/guards/auth.guard';
-
-
 
 export const routes: Routes = [
   {
     path: 'login',
-    loadComponent: () => import('./presentation/features/auth/login/login').then(m => m.LoginComponent)
+    loadComponent: () =>
+      import('./presentation/features/auth/login/login').then((m) => m.LoginComponent),
   },
   {
     path: 'tasks',
-    loadComponent: () => import('./presentation/features/tasks/task-list/task-list').then(m => m.TaskListComponent),
-    canActivate: [authGuard]
+    loadComponent: () =>
+      import('./presentation/features/tasks/task-list/task-list').then((m) => m.TaskListComponent),
+    canActivate: [authGuard],
   },
   {
-    path: 'notifications',
-    loadComponent: () => import('./features/notifications/components/notification-list/notification-list.component').then(m => m.NotificationListComponent),
-    canActivate: [authGuard]
+    path: 'categories',
+    loadComponent: () =>
+      import('./presentation/features/categories/category-list/category-list.component').then(
+        (m) => m.CategoryListComponent
+      ),
+    canActivate: [authGuard],
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];

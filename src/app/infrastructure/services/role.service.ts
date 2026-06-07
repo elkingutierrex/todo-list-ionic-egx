@@ -1,5 +1,5 @@
 import { Injectable, computed, inject } from '@angular/core';
-import { Role } from '../../domain/models/role.model';
+import { Role } from '../../core/models/role.model';
 import { AuthService } from '../../core/services/auth.service';
 
 @Injectable({
