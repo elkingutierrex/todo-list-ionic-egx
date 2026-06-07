@@ -19,6 +19,10 @@
 - [ ] Add unit tests for all services
 - [ ] Add E2E tests with Cypress / Playwright
 - [ ] Replace Firebase stub repositories with real implementations once credentials are available
+- [ ] Migrate `localStorage` to `@capacitor/preferences` for native persistence
+- [ ] Implement Firebase Security Rules in Firestore
+- [ ] Configure Remote Config parameters in Firebase Console
+- [ ] Generate native assets (Icons/Splash) using `@capacitor/assets`
 
 ## Bugs
 
