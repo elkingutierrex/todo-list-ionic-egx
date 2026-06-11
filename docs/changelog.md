@@ -51,12 +51,18 @@
 - **Task Creation**: Resolved final data handling issues in the task form.
 - **Git History**: Consolidated legacy commits into a professional starting point, preserving today's step-by-step history.
 
-## v1.3.0 — 2026-06-07 (Latest)
+## v1.4.0 — 2026-06-11 (Latest)
 
 ### Added
-- **Firebase Full Activation**: Switched from Mock Repositories to real Firebase Firestore in production and development environments.
-- **Responsive Desktop Actions**: Task list now shows fixed Edit/Delete buttons on desktop screens (>992px) while maintaining sliding gestures for mobile/tablet.
+- **Vitest Testing Framework**: Configured Vitest as the primary unit testing engine for Angular 21, replacing deprecated Karma/Jasmine.
+- **Secure Native Storage**: Integrated `@capacitor/preferences` to replace `localStorage`, ensuring user sessions are stored securely in native keychains.
 
-### Changed
-- **Optional Categorization**: Made category selection explicitly optional in the Task Form, improving flexiblity when creating tasks.
-- **Improved Mobile UI**: Optimized category chips with horizontal scroll and better color visibility for mobile devices.
+### Fixed
+- **Security (XSS)**: Corrected a critical vulnerability in the Login alert which was directly interpolating user input into HTML tags.
+- **State Management (Sync Fix)**: Fixed a bug where logging out did not clear the internal Signal state, allowing previous session data to persist visually.
+- **Infinite Loader**: Implemented RxJS `finalize()` operator in AuthService to guarantee the login/register loader is dismissed even on connection timeouts or silent failures.
+- **Error Handling**: Added safe subscribe blocks with error notifications in Category management to replace previous "fire and forget" logic.
+
+### Refactored
+- **Code Organization**: Extracted inlined HTML and SCSS from `TaskFormModal` and `CategoryFormModal` into separate files for better maintainability and cleaner component logic.
+- **Platform Experience**: Removed forced Material Design mode (`mode: 'md'`) to allow Ionic to serve native Cupertino visuals on iOS devices and standard Material on Android.
