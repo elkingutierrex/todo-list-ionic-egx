@@ -1,0 +1,1373 @@
+[debug] [2026-06-08T00:24:18.927Z] ----------------------------------------------------------------------
+[debug] [2026-06-08T00:24:18.943Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2026-06-08T00:24:18.945Z] CLI Version:   15.19.1
+[debug] [2026-06-08T00:24:18.945Z] Platform:      win32
+[debug] [2026-06-08T00:24:18.946Z] Node Version:  v24.12.0
+[debug] [2026-06-08T00:24:18.947Z] Time:          Sun Jun 07 2026 19:24:18 GMT-0500 (hora estándar de Colombia)
+[debug] [2026-06-08T00:24:18.948Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-06-08T00:24:28.986Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-06-08T00:24:28.988Z] > authorizing via signed-in user (elkin.gutierrex@gmail.com)
+[debug] [2026-06-08T00:24:28.989Z] [iam] checking project egx-task-challenge for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-06-08T00:24:28.995Z] Checked if tokens are valid: false, expires at: 1780874897429
+[debug] [2026-06-08T00:24:28.996Z] Checked if tokens are valid: false, expires at: 1780874897429
+[debug] [2026-06-08T00:24:28.997Z] > refreshing access token with scopes: []
+[debug] [2026-06-08T00:24:29.006Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-06-08T00:24:29.007Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-06-08T00:24:29.532Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-06-08T00:24:29.533Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-06-08T00:24:29.561Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/egx-task-challenge:testIamPermissions [none]
+[debug] [2026-06-08T00:24:29.562Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/egx-task-challenge:testIamPermissions  x-goog-user-project=egx-task-challenge
+[debug] [2026-06-08T00:24:29.562Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/egx-task-challenge:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-08T00:24:29.642Z] *** [apiv2] error from fetch(https://cloudresourcemanager.googleapis.com/v1/projects/egx-task-challenge:testIamPermissions, {"headers":{},"method":"POST","body":"{\"permissions\":[\"firebase.projects.get\",\"firebasehosting.sites.update\"]}"}): FetchError: request to https://cloudresourcemanager.googleapis.com/v1/projects/egx-task-challenge:testIamPermissions failed, reason: getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com
+[debug] [2026-06-08T00:24:29.643Z] [iam] error while checking permissions, command may fail: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/egx-task-challenge:testIamPermissions
+[debug] [2026-06-08T00:24:29.644Z] Checked if tokens are valid: true, expires at: 1780881868533
+[debug] [2026-06-08T00:24:29.645Z] Checked if tokens are valid: true, expires at: 1780881868533
+[debug] [2026-06-08T00:24:29.646Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/egx-task-challenge [none]
+[debug] [2026-06-08T00:24:30.165Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/egx-task-challenge 200
+[debug] [2026-06-08T00:24:30.165Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/egx-task-challenge {"projectId":"egx-task-challenge","projectNumber":"728152381986","displayName":"egx-task-challenge","name":"projects/egx-task-challenge","resources":{"hostingSite":"egx-task-challenge"},"state":"ACTIVE","etag":"1_d80be8c1-25c8-42ec-a493-e95248d3acb3"}
+[info] 
+[info] === Deploying to 'egx-task-challenge'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-06-08T00:24:30.176Z] Checked if tokens are valid: true, expires at: 1780881868533
+[debug] [2026-06-08T00:24:30.176Z] Checked if tokens are valid: true, expires at: 1780881868533
+[debug] [2026-06-08T00:24:30.177Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/egx-task-challenge/sites/egx-task-challenge [none]
+[debug] [2026-06-08T00:24:30.183Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.185Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.187Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.188Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.190Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.191Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.193Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.194Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.196Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.197Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.199Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.201Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.203Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.204Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.206Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.208Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.209Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.211Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.214Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.215Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.217Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.219Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.220Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.221Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.222Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.223Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.224Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.226Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.227Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.229Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.231Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.233Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.234Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.235Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.236Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.238Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.239Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.240Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.241Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.242Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.243Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.244Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.245Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.252Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.254Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.256Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.257Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.259Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.261Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.262Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.265Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.267Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.269Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.270Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.272Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.273Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.279Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.281Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.283Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.284Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.286Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.288Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.290Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.291Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.293Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.295Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.296Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.298Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.299Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.303Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.305Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.307Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.308Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.311Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.313Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.315Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.316Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.318Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.319Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.321Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.323Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.326Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.332Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.334Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.336Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.338Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.340Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.342Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.344Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.345Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.347Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.348Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.350Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.353Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.354Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.359Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.360Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.362Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.363Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.365Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.366Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.368Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-08T00:24:30.370Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Console.log (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\lib\winston\transports\console.js:87:23)
+    at Console._write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\modern.js:103:17)
+    at doWrite (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)
+    at writeOrBuffer (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)
+    at Writable.write (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)
+    at DerivedLogger.ondata (C:\Users\elkin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)
+[error] 
