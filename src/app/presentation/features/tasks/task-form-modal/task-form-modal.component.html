@@ -1,0 +1,56 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()" color="medium">
+        <ion-icon slot="icon-only" name="close" />
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ task ? 'Edit Task' : 'New Task' }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [strong]="true" (click)="submit()" [disabled]="!title()" color="primary" fill="clear">
+        Save
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="form-wrapper">
+    <div class="custom-field">
+      <label class="field-label">What needs to be done? *</label>
+      <ion-input
+        [ngModel]="title()"
+        (ngModelChange)="title.set($event)"
+        placeholder="e.g. Buy groceries"
+        class="premium-input"
+        required />
+    </div>
+
+    <div class="custom-field">
+      <label class="field-label">Description (Optional)</label>
+      <ion-textarea
+        [ngModel]="description()"
+        (ngModelChange)="description.set($event)"
+        placeholder="Add some details..."
+        [rows]="5"
+        class="premium-input" />
+    </div>
+
+    @if (categories.length > 0) {
+      <div class="custom-field">
+        <label class="field-label">Category (Optional)</label>
+        <ion-select
+          [ngModel]="selectedCategoryId()"
+          (ngModelChange)="selectedCategoryId.set($event)"
+          placeholder="Select a category"
+          interface="popover"
+          class="premium-select">
+          <ion-select-option [value]="null">No Category</ion-select-option>
+          @for (cat of categories; track cat.id) {
+            <ion-select-option [value]="cat.id">{{ cat.name }}</ion-select-option>
+          }
+        </ion-select>
+      </div>
+    }
+  </div>
+</ion-content>

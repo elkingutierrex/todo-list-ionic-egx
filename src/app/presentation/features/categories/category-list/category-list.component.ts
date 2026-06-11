@@ -4,7 +4,7 @@ import {
   IonHeader, IonToolbar, IonTitle, IonContent, IonFab, IonFabButton,
   IonIcon, IonList, IonItemSliding, IonItem, IonLabel, IonItemOptions,
   IonItemOption, IonButton, IonButtons, IonSkeletonText, IonText,
-  AlertController, ModalController
+  AlertController, ModalController, ToastController
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { add, trash, create, arrowBack } from 'ionicons/icons';
@@ -29,6 +29,7 @@ export class CategoryListComponent implements OnInit {
   private alertCtrl = inject(AlertController);
   private modalCtrl = inject(ModalController);
   private router = inject(Router);
+  private toastCtrl = inject(ToastController);
 
   categories = this.categoryService.categories;
   isLoading = signal(true);
@@ -55,7 +56,11 @@ export class CategoryListComponent implements OnInit {
         {
           text: 'Delete',
           role: 'destructive',
-          handler: () => this.categoryService.deleteCategory(category.id).subscribe(),
+          handler: () => {
+            this.categoryService.deleteCategory(category.id).subscribe({
+              error: () => this.showError('Could not delete category.')
+            });
+          },
         },
       ],
     });
@@ -74,10 +79,24 @@ export class CategoryListComponent implements OnInit {
     if (!data) return;
 
     if (category) {
-      this.categoryService.updateCategory({ ...category, ...data }).subscribe();
+      this.categoryService.updateCategory({ ...category, ...data }).subscribe({
+        error: () => this.showError('Could not update category.')
+      });
     } else {
-      this.categoryService.addCategory(data).subscribe();
+      this.categoryService.addCategory(data).subscribe({
+        error: () => this.showError('Could not create category.')
+      });
     }
+  }
+
+  private async showError(message: string) {
+    const toast = await this.toastCtrl.create({
+      message,
+      duration: 3000,
+      color: 'danger',
+      position: 'bottom'
+    });
+    await toast.present();
   }
 
   trackByCategoryId(_: number, cat: Category): string {

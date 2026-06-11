@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Preferences } from '@capacitor/preferences';
 import { Observable, of, throwError } from 'rxjs';
 import { AuthRepository } from '../../core/repositories/auth.repository';
 import { User } from '../../core/models/user.model';
@@ -30,23 +31,23 @@ export class MockAuthRepository extends AuthRepository {
         return of(newUser);
     }
 
-    setCurrentUser(user: User): void {
+    async setCurrentUser(user: User): Promise<void> {
         this.currentUser = user;
-        localStorage.setItem('currentUser', JSON.stringify(user));
+        await Preferences.set({ key: 'currentUser', value: JSON.stringify(user) });
     }
 
-    getCurrentUser(): User | null {
+    async getCurrentUser(): Promise<User | null> {
         if (!this.currentUser) {
-            const stored = localStorage.getItem('currentUser');
-            if (stored) {
-                this.currentUser = JSON.parse(stored);
+            const { value } = await Preferences.get({ key: 'currentUser' });
+            if (value) {
+                this.currentUser = JSON.parse(value);
             }
         }
         return this.currentUser;
     }
 
-    logout(): void {
+    async logout(): Promise<void> {
         this.currentUser = null;
-        localStorage.removeItem('currentUser');
+        await Preferences.remove({ key: 'currentUser' });
     }
 }

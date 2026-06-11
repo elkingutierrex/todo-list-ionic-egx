@@ -1,0 +1,55 @@
+ion-toolbar {
+  --background: var(--ion-card-background);
+  --color: var(--ion-color-dark);
+  padding: 8px 4px 0;
+}
+
+ion-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 12px 4px;
+}
+
+.custom-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ion-color-medium);
+  padding-left: 4px;
+}
+
+.premium-input, .premium-select {
+  --background: var(--ion-color-light);
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+  border-radius: 14px;
+  background: var(--ion-color-light);
+  font-size: 1rem;
+  color: var(--ion-color-dark);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.2s;
+
+  &:focus-within {
+    border-color: var(--ion-color-primary);
+    box-shadow: 0 0 0 3px rgba(var(--ion-color-primary-rgb), 0.1);
+  }
+}
+
+ion-textarea {
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+}

@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { finalize } from 'rxjs/operators';
 import {
   IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader,
   IonCardTitle, IonCardContent, IonItem, IonLabel, IonInput, IonButton,
@@ -46,33 +47,33 @@ export class LoginComponent {
     const email = this.emailControl.value!;
     this.isLoading = true;
 
-    this.authService.findUser(email).subscribe({
-      next: (user) => {
-        this.isLoading = false;
-        if (user) {
-          this.authService.setCurrentUser(user);
-          this.router.navigate(['/tasks']);
-        } else {
-          this.promptCreateUser(email);
+    this.authService.findUser(email)
+      .pipe(finalize(() => this.isLoading = false))
+      .subscribe({
+        next: (user) => {
+          if (user) {
+            this.authService.setCurrentUser(user);
+            this.router.navigate(['/tasks']);
+          } else {
+            this.promptCreateUser(email);
+          }
+        },
+        error: async (err) => {
+          const alert = await this.alertCtrl.create({
+            header: 'Connection Error',
+            message: 'An error occurred while connecting to the server.',
+            buttons: ['OK']
+          });
+          await alert.present();
+          console.error(err);
         }
-      },
-      error: async (err) => {
-        this.isLoading = false;
-        const alert = await this.alertCtrl.create({
-          header: 'Connection Error',
-          message: 'An error occurred while connecting to the server.',
-          buttons: ['OK']
-        });
-        await alert.present();
-        console.error(err);
-      }
-    });
+      });
   }
 
   async promptCreateUser(email: string) {
     const alert = await this.alertCtrl.create({
       header: 'Create a new user',
-      message: `The email <b>${email}</b> is not registered. Do you want to register it now?`,
+      message: `The email ${email} is not registered. Do you want to register it now?`,
       buttons: [
         {
           text: 'Cancel',
@@ -93,30 +94,30 @@ export class LoginComponent {
 
   private registerUser(email: string) {
     this.isLoading = true;
-    this.authService.createUser(email).subscribe({
-      next: async (user) => {
-        this.isLoading = false;
-        this.authService.setCurrentUser(user);
-        
-        const toast = await this.toastCtrl.create({
-          message: 'User registered successfully!',
-          duration: 2000,
-          color: 'success',
-          position: 'bottom'
-        });
-        await toast.present();
-        
-        this.router.navigate(['/tasks']);
-      },
-      error: async () => {
-        this.isLoading = false;
-        const alert = await this.alertCtrl.create({
-          header: 'Error',
-          message: 'Could not create user. Please try again.',
-          buttons: ['OK']
-        });
-        await alert.present();
-      }
-    });
+    this.authService.createUser(email)
+      .pipe(finalize(() => this.isLoading = false))
+      .subscribe({
+        next: async (user) => {
+          this.authService.setCurrentUser(user);
+          
+          const toast = await this.toastCtrl.create({
+            message: 'User registered successfully!',
+            duration: 2000,
+            color: 'success',
+            position: 'bottom'
+          });
+          await toast.present();
+          
+          this.router.navigate(['/tasks']);
+        },
+        error: async () => {
+          const alert = await this.alertCtrl.create({
+            header: 'Error',
+            message: 'Could not create user. Please try again.',
+            buttons: ['OK']
+          });
+          await alert.present();
+        }
+      });
   }
 }

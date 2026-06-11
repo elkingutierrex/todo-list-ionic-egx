@@ -47,4 +47,8 @@ export class CategoryService {
       tap(() => this.categoriesSignal.update((cats) => cats.filter((c) => c.id !== id)))
     );
   }
+
+  clearState(): void {
+    this.categoriesSignal.set([]);
+  }
 }

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { AuthRepository } from '../repositories/auth.repository';
 import { User } from '../models/user.model';
 import { Observable, tap } from 'rxjs';
+import { TaskService } from './task.service';
+import { CategoryService } from './category.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +12,19 @@ import { Observable, tap } from 'rxjs';
 export class AuthService {
   private authRepository = inject(AuthRepository);
   private router = inject(Router);
+  private taskService = inject(TaskService);
+  private categoryService = inject(CategoryService);
 
-  currentUser = signal<User | null>(this.authRepository.getCurrentUser());
+  currentUser = signal<User | null>(null);
 
-  constructor() { }
+  constructor() {
+    this.init();
+  }
+
+  private async init() {
+    const user = await this.authRepository.getCurrentUser();
+    this.currentUser.set(user);
+  }
 
   findUser(email: string): Observable<User | null> {
     return this.authRepository.findUser(email);
@@ -25,14 +36,16 @@ export class AuthService {
     );
   }
 
-  setCurrentUser(user: User): void {
-    this.authRepository.setCurrentUser(user);
+  async setCurrentUser(user: User): Promise<void> {
+    await this.authRepository.setCurrentUser(user);
     this.currentUser.set(user);
   }
 
-  logout(): void {
-    this.authRepository.logout();
+  async logout(): Promise<void> {
+    await this.authRepository.logout();
     this.currentUser.set(null);
+    this.taskService.clearState();
+    this.categoryService.clearState();
     this.router.navigate(['/login']);
   }
 

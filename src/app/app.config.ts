@@ -27,7 +27,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideAnimationsAsync(),
-    provideIonicAngular({ mode: 'md' }),
+    provideIonicAngular({}),
 
     environment.useMock
       ? { provide: TaskRepository, useClass: MockTaskRepository }

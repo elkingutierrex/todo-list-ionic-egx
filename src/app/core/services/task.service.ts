@@ -57,4 +57,9 @@ export class TaskService {
   toggleTaskCompletion(task: Task) {
     return this.updateTask({ ...task, isCompleted: !task.isCompleted });
   }
+
+  clearState(): void {
+    this.tasksSignal.set([]);
+    this.selectedCategoryIdSignal.set(null);
+  }
 }

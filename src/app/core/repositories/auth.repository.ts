@@ -5,7 +5,7 @@ export abstract class AuthRepository {
     abstract findUser(email: string): Observable<User | null>;
     abstract createUser(email: string): Observable<User>;
     // For session management (simple version)
-    abstract setCurrentUser(user: User): void;
-    abstract getCurrentUser(): User | null;
-    abstract logout(): void;
+    abstract setCurrentUser(user: User): Promise<void>;
+    abstract getCurrentUser(): Promise<User | null>;
+    abstract logout(): Promise<void>;
 }

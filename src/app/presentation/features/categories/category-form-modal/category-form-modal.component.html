@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close" />
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ category ? 'Edit Category' : 'New Category' }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [strong]="true" (click)="submit()" [disabled]="!name()">
+        Save
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="form-content">
+  <ion-item>
+    <ion-label position="stacked">Name <span class="required">*</span></ion-label>
+    <ion-input
+      [ngModel]="name()"
+      (ngModelChange)="name.set($event)"
+      placeholder="Category name"
+      maxlength="50"
+      autocapitalize="sentences" />
+  </ion-item>
+
+  <div class="color-picker">
+    <p class="color-label">Color</p>
+    <div class="swatches">
+      @for (color of presetColors; track color) {
+        <button
+          class="swatch"
+          [style.background]="color"
+          [class.selected]="selectedColor() === color"
+          (click)="selectedColor.set(color)"
+          type="button">
+        </button>
+      }
+    </div>
+  </div>
+</ion-content>
