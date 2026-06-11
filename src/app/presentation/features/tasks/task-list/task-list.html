@@ -2,6 +2,7 @@
   <ion-toolbar>
     <ion-title>
       My Tasks
+      <span class="version-badge">v{{ appVersion }}</span>
       @if (pendingCount() > 0) {
         <ion-badge color="warning" class="pending-badge">{{ pendingCount() }}</ion-badge>
       }

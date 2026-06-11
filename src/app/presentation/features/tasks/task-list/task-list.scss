@@ -14,6 +14,20 @@ ion-header {
   }
 }
 
+.version-badge {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--ion-color-medium);
+  background: var(--ion-color-step-100);
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+  border: 1px solid var(--glass-border);
+}
+
 .filter-toolbar {
   --background: var(--ion-background-color);
   padding: 0 20px 12px;

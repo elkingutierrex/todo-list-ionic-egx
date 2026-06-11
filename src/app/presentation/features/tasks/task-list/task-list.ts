@@ -15,6 +15,7 @@ import { AuthService } from '../../../../core/services/auth.service';
 import { Task } from '../../../../core/models/task.model';
 import { FEATURE_FLAG_KEYS } from '../../../../core/models/feature-flag.model';
 import { TaskFormModalComponent } from '../task-form-modal/task-form-modal.component';
+import { APP_CONFIG } from '../../../../core/constants/app.constants';
 
 @Component({
   selector: 'app-task-list',
@@ -45,6 +46,7 @@ export class TaskListComponent implements OnInit {
   currentUser = this.authService.currentUser;
   categoryMap = this.categoryService.categoryMap;
   isLoading = signal(true);
+  appVersion = APP_CONFIG.VERSION;
 
   categoriesEnabled = computed(() =>
     this.featureFlagService.isEnabled(FEATURE_FLAG_KEYS.CATEGORY_FEATURE)
@@ -112,7 +114,7 @@ export class TaskListComponent implements OnInit {
       message: 'Are you sure you want to logout?',
       buttons: [
         { text: 'Cancel', role: 'cancel' },
-        { text: 'Logout', handler: () => this.router.navigate(['/login']) },
+        { text: 'Logout', handler: () => this.authService.logout() },
       ],
     });
     await alert.present();

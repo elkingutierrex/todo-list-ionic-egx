@@ -1,55 +1,104 @@
 ion-toolbar {
   --background: var(--ion-card-background);
   --color: var(--ion-color-dark);
-  padding: 8px 4px 0;
+  padding: 12px 6px 4px;
 }
 
 ion-title {
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.5px;
 }
 
-.form-wrapper {
+.form-container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 12px 4px;
+  gap: 32px;
+  padding: 8px 4px;
 }
 
-.custom-field {
+.input-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
-.field-label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--ion-color-medium);
+.label-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding-left: 4px;
-}
 
-.premium-input, .premium-select {
-  --background: var(--ion-color-light);
-  --padding-start: 16px;
-  --padding-end: 16px;
-  --padding-top: 14px;
-  --padding-bottom: 14px;
-  border-radius: 14px;
-  background: var(--ion-color-light);
-  font-size: 1rem;
-  color: var(--ion-color-dark);
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
-  border: 1px solid rgba(0,0,0,0.05);
-  transition: all 0.2s;
-
-  &:focus-within {
-    border-color: var(--ion-color-primary);
-    box-shadow: 0 0 0 3px rgba(var(--ion-color-primary-rgb), 0.1);
+  ion-icon {
+    font-size: 1.2rem;
+    opacity: 0.9;
   }
 }
 
-ion-textarea {
-  --padding-top: 14px;
-  --padding-bottom: 14px;
+.premium-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ion-color-dark);
+  letter-spacing: -0.2px;
+}
+
+.premium-input-wrapper {
+  background: var(--ion-color-light);
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+
+  &:focus-within {
+    border-color: var(--ion-color-primary);
+    box-shadow: 0 0 0 4px rgba(var(--ion-color-primary-rgb), 0.1), 
+                inset 0 2px 4px rgba(0, 0, 0, 0.01);
+    transform: translateY(-1px);
+    background: var(--ion-background-color);
+  }
+}
+
+.premium-input {
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 18px;
+  --padding-bottom: 18px;
+  font-size: 1.05rem;
+  --color: var(--ion-color-dark);
+}
+
+.premium-textarea {
+  --padding-top: 20px;
+}
+
+.premium-select {
+  width: 100%;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+}
+
+.form-footer {
+  margin-top: 12px;
+  padding: 0 4px;
+}
+
+.helper-text {
+  font-size: 0.8rem;
+  color: var(--ion-color-medium);
+  font-weight: 500;
+}
+
+// Mobile specific overrides
+@media (max-width: 576px) {
+  .form-container {
+    gap: 24px;
+  }
+  
+  .premium-input {
+    --padding-top: 14px;
+    --padding-bottom: 14px;
+  }
 }

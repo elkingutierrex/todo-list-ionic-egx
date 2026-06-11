@@ -6,7 +6,7 @@ import {
   IonIcon, ModalController
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { close } from 'ionicons/icons';
+import { close, textOutline, documentTextOutline, pricetagOutline } from 'ionicons/icons';
 import { Task } from '../../../../core/models/task.model';
 import { Category } from '../../../../core/models/category.model';
 
@@ -40,7 +40,7 @@ export class TaskFormModalComponent implements OnInit {
   selectedCategoryId = signal<string | null | undefined>(null);
 
   constructor() {
-    addIcons({ close });
+    addIcons({ close, textOutline, documentTextOutline, pricetagOutline });
   }
 
   ngOnInit(): void {

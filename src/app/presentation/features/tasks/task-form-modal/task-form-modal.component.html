@@ -15,42 +15,61 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div class="form-wrapper">
-    <div class="custom-field">
-      <label class="field-label">What needs to be done? *</label>
-      <ion-input
-        [ngModel]="title()"
-        (ngModelChange)="title.set($event)"
-        placeholder="e.g. Buy groceries"
-        class="premium-input"
-        required />
+  <div class="form-container">
+    <div class="input-group">
+      <div class="label-with-icon">
+        <ion-icon name="text-outline" color="primary"></ion-icon>
+        <label class="premium-label">What needs to be done? *</label>
+      </div>
+      <div class="premium-input-wrapper">
+        <ion-input
+          [ngModel]="title()"
+          (ngModelChange)="title.set($event)"
+          placeholder="e.g. Design app logo"
+          class="premium-input"
+          required />
+      </div>
     </div>
 
-    <div class="custom-field">
-      <label class="field-label">Description (Optional)</label>
-      <ion-textarea
-        [ngModel]="description()"
-        (ngModelChange)="description.set($event)"
-        placeholder="Add some details..."
-        [rows]="5"
-        class="premium-input" />
+    <div class="input-group">
+      <div class="label-with-icon">
+        <ion-icon name="document-text-outline" color="primary"></ion-icon>
+        <label class="premium-label">Description (Optional)</label>
+      </div>
+      <div class="premium-input-wrapper">
+        <ion-textarea
+          [ngModel]="description()"
+          (ngModelChange)="description.set($event)"
+          placeholder="Add some context or subtasks..."
+          [rows]="6"
+          class="premium-input premium-textarea" />
+      </div>
     </div>
 
     @if (categories.length > 0) {
-      <div class="custom-field">
-        <label class="field-label">Category (Optional)</label>
-        <ion-select
-          [ngModel]="selectedCategoryId()"
-          (ngModelChange)="selectedCategoryId.set($event)"
-          placeholder="Select a category"
-          interface="popover"
-          class="premium-select">
-          <ion-select-option [value]="null">No Category</ion-select-option>
-          @for (cat of categories; track cat.id) {
-            <ion-select-option [value]="cat.id">{{ cat.name }}</ion-select-option>
-          }
-        </ion-select>
+      <div class="input-group">
+        <div class="label-with-icon">
+          <ion-icon name="pricetag-outline" color="primary"></ion-icon>
+          <label class="premium-label">Category (Optional)</label>
+        </div>
+        <div class="premium-input-wrapper">
+          <ion-select
+            [ngModel]="selectedCategoryId()"
+            (ngModelChange)="selectedCategoryId.set($event)"
+            placeholder="Assign to category"
+            interface="popover"
+            class="premium-select">
+            <ion-select-option [value]="null">No Category</ion-select-option>
+            @for (cat of categories; track cat.id) {
+              <ion-select-option [value]="cat.id">{{ cat.name }}</ion-select-option>
+            }
+          </ion-select>
+        </div>
       </div>
     }
+    
+    <div class="form-footer">
+      <p class="helper-text">* Required field</p>
+    </div>
   </div>
 </ion-content>
