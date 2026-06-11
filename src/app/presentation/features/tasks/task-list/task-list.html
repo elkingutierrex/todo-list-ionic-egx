@@ -2,10 +2,10 @@
   <ion-toolbar>
     <ion-title>
       My Tasks
-      <span class="version-badge">v{{ appVersion }}</span>
       @if (pendingCount() > 0) {
         <ion-badge color="warning" class="pending-badge">{{ pendingCount() }}</ion-badge>
       }
+      <span class="version-badge">v{{ appVersion }}</span>
     </ion-title>
     <ion-buttons slot="end">
       @if (categoriesEnabled()) {
@@ -21,17 +21,18 @@
 
   <ion-toolbar class="filter-toolbar">
     <div class="category-filter">
-      <ion-chip
-        [class.selected]="selectedCategoryId() === null"
-        (click)="filterByCategory(null)">
+      <ion-chip [class.selected]="selectedCategoryId() === null" (click)="filterByCategory(null)">
         All
       </ion-chip>
       @for (cat of categories(); track cat.id) {
         <ion-chip
           [class.selected]="selectedCategoryId() === cat.id"
           [style.border-color]="cat.color"
-          [style.--background]="selectedCategoryId() === cat.id ? cat.color : 'var(--ion-card-background)'"
-          (click)="filterByCategory(cat.id)">
+          [style.--background]="
+            selectedCategoryId() === cat.id ? cat.color : 'var(--ion-card-background)'
+          "
+          (click)="filterByCategory(cat.id)"
+        >
           <span class="category-dot" [style.background]="cat.color"></span>
           {{ cat.name }}
         </ion-chip>
@@ -44,13 +45,23 @@
   <div class="animate-fade-in">
     @if (isLoading()) {
       <ion-list lines="none">
-        @for (i of [1,2,3,4,5]; track i) {
-          <div class="task-card" style="opacity: 0.5;">
+        @for (i of [1, 2, 3, 4, 5]; track i) {
+          <div class="task-card" style="opacity: 0.5">
             <ion-item lines="none">
-              <ion-skeleton-text animated style="width: 24px; height: 24px; border-radius: 50%;" slot="start" />
+              <ion-skeleton-text
+                animated
+                style="width: 24px; height: 24px; border-radius: 50%"
+                slot="start"
+              />
               <ion-label>
-                <ion-skeleton-text animated style="width: 60%; height: 1.2rem; border-radius: 4px;" />
-                <ion-skeleton-text animated style="width: 40%; height: 0.9rem; border-radius: 4px; margin-top: 8px;" />
+                <ion-skeleton-text
+                  animated
+                  style="width: 60%; height: 1.2rem; border-radius: 4px"
+                />
+                <ion-skeleton-text
+                  animated
+                  style="width: 40%; height: 0.9rem; border-radius: 4px; margin-top: 8px"
+                />
               </ion-label>
             </ion-item>
           </div>
@@ -59,32 +70,46 @@
     } @else if (tasks().length > 0) {
       <ion-list lines="none">
         @for (task of tasks(); track task.id) {
-          <ion-item-sliding style="margin-bottom: 12px;">
+          <ion-item-sliding style="margin-bottom: 12px">
             <ion-item button="true" (click)="onToggle(task)" class="task-card">
               <ion-icon
                 slot="start"
                 [name]="task.isCompleted ? 'checkmark-circle' : 'ellipse-outline'"
                 [color]="task.isCompleted ? 'success' : 'medium'"
-                style="font-size: 24px;"
-                (click)="$event.stopPropagation(); onToggle(task)" />
-              
+                style="font-size: 24px"
+                (click)="$event.stopPropagation(); onToggle(task)"
+              />
+
               <ion-label>
                 <h2 [class.strikethrough]="task.isCompleted">{{ task.title }}</h2>
                 <p [class.strikethrough]="task.isCompleted">{{ task.description }}</p>
-                
-                @if (categoriesEnabled() && task.categoryId && categoryMap().get(task.categoryId); as cat) {
+
+                @if (
+                  categoriesEnabled() && task.categoryId && categoryMap().get(task.categoryId);
+                  as cat
+                ) {
                   <div class="category-tag">
                     <span class="category-dot" [style.background]="cat.color"></span>
                     {{ cat.name }}
                   </div>
                 }
               </ion-label>
-              
+
               <ion-buttons slot="end" class="desktop-actions">
-                <ion-button (click)="openTaskModal(task); $event.stopPropagation()" color="primary" fill="clear" title="Edit Task">
+                <ion-button
+                  (click)="openTaskModal(task); $event.stopPropagation()"
+                  color="primary"
+                  fill="clear"
+                  title="Edit Task"
+                >
                   <ion-icon name="create" slot="icon-only" />
                 </ion-button>
-                <ion-button (click)="onDelete(task); $event.stopPropagation()" color="danger" fill="clear" title="Delete Task">
+                <ion-button
+                  (click)="onDelete(task); $event.stopPropagation()"
+                  color="danger"
+                  fill="clear"
+                  title="Delete Task"
+                >
                   <ion-icon name="trash" slot="icon-only" />
                 </ion-button>
               </ion-buttons>
@@ -94,7 +119,11 @@
               <ion-item-option color="primary" (click)="openTaskModal(task)">
                 <ion-icon slot="icon-only" name="create" />
               </ion-item-option>
-              <ion-item-option color="danger" (click)="onDelete(task)" style="border-radius: 0 20px 20px 0;">
+              <ion-item-option
+                color="danger"
+                (click)="onDelete(task)"
+                style="border-radius: 0 20px 20px 0"
+              >
                 <ion-icon slot="icon-only" name="trash" />
               </ion-item-option>
             </ion-item-options>

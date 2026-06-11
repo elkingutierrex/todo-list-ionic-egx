@@ -1,4 +1,4 @@
-import { Injectable, signal, inject } from '@angular/core';
+import { Injectable, signal, inject, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthRepository } from '../repositories/auth.repository';
 import { User } from '../models/user.model';
@@ -12,8 +12,7 @@ import { CategoryService } from './category.service';
 export class AuthService {
   private authRepository = inject(AuthRepository);
   private router = inject(Router);
-  private taskService = inject(TaskService);
-  private categoryService = inject(CategoryService);
+  private injector = inject(Injector);
 
   currentUser = signal<User | null>(null);
 
@@ -44,8 +43,13 @@ export class AuthService {
   async logout(): Promise<void> {
     await this.authRepository.logout();
     this.currentUser.set(null);
-    this.taskService.clearState();
-    this.categoryService.clearState();
+    
+    // Lazily get services to break circular dependency
+    const taskService = this.injector.get(TaskService);
+    const categoryService = this.injector.get(CategoryService);
+    
+    taskService.clearState();
+    categoryService.clearState();
     this.router.navigate(['/login']);
   }
 

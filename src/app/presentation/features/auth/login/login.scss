@@ -5,8 +5,8 @@
   align-items: center;
   min-height: 100vh;
   padding: 24px;
-  background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.05), transparent 40%),
-              radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.05), transparent 40%);
+  background: radial-gradient(circle at top right, rgba(var(--ion-color-primary-rgb), 0.1), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(var(--ion-color-primary-rgb), 0.1), transparent 40%);
   
   .logo-wrapper {
     margin-bottom: 40px;
@@ -18,20 +18,26 @@
       margin: 0 auto 16px;
       border-radius: 30px;
       display: block;
-      box-shadow: 0 12px 32px rgba(79, 70, 229, 0.2);
-      border: 4px solid #fff;
+      box-shadow: 0 12px 32px rgba(var(--ion-color-primary-rgb), 0.3);
+      border: 4px solid var(--ion-card-background);
+    }
+
+    p {
+      color: #ffffff;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
   }
 }
 
 ion-card {
-  --background: #ffffff;
+  --background: var(--ion-card-background);
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   border-radius: 28px;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.02);
+  border: 1px solid var(--glass-border);
   
   ion-card-header {
     padding-bottom: 8px;
@@ -41,28 +47,31 @@ ion-card {
   ion-card-title {
     font-weight: 800;
     font-size: 1.6rem;
-    color: #1e293b;
+    color: #ffffff;
     letter-spacing: -0.5px;
   }
 }
 
 ion-item {
-  --background: #f1f5f9;
+  --background: var(--input-background);
+  --color: #ffffff;
   --padding-start: 16px;
   --padding-end: 16px;
   --inner-padding-end: 0;
   --border-radius: 16px;
   margin-bottom: 12px;
   font-size: 0.95rem;
+  border: 1px solid var(--glass-border);
   
   &::part(native) {
-    border: 1px solid transparent;
+    border: none;
   }
 }
 
 ion-input {
   --padding-top: 14px;
   --padding-bottom: 14px;
+  color: #ffffff;
 }
 
 .login-btn {
@@ -73,12 +82,7 @@ ion-input {
   font-weight: 700;
   font-size: 1rem;
   margin-top: 24px;
-  --box-shadow: 0 10px 20px rgba(79, 70, 229, 0.25);
-}
-
-@media (prefers-color-scheme: dark) {
-  ion-card { --background: #1e293b; }
-  ion-item { --background: #0f172a; }
+  --box-shadow: 0 10px 20px rgba(var(--ion-color-primary-rgb), 0.3);
 }
 
 .version-footer {
@@ -86,5 +90,5 @@ ion-input {
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--ion-color-medium);
-  opacity: 0.7;
+  opacity: 0.8;
 }

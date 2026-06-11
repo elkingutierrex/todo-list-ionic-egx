@@ -1,4 +1,4 @@
 export const APP_CONFIG = {
-  VERSION: '1.4.1',
+  VERSION: '1.14.3',
   APP_NAME: 'To Do List - egx'
 };

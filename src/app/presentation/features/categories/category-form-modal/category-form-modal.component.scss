@@ -1,6 +1,20 @@
-.form-content ion-item {
-  --padding-start: 20px;
-  --inner-padding-end: 20px;
+ion-toolbar {
+  --background: var(--ion-card-background);
+  --color: #ffffff;
+}
+
+.form-content {
+  background: var(--ion-card-background);
+  
+  ion-item {
+    --background: var(--input-background);
+    --color: #ffffff;
+    --padding-start: 20px;
+    --inner-padding-end: 20px;
+    --border-radius: 12px;
+    margin: 10px 0;
+    border: 1px solid var(--glass-border);
+  }
 }
 
 .required {
@@ -9,12 +23,14 @@
 
 .color-picker {
   padding: 16px 20px;
+  background: var(--ion-card-background);
 }
 
 .color-label {
   font-size: 0.85rem;
-  color: var(--ion-color-medium);
+  color: #ffffff;
   margin: 0 0 10px;
+  font-weight: 600;
 }
 
 .swatches {
@@ -27,7 +43,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 3px solid transparent;
+  border: 3px solid rgba(255,255,255,0.1);
   cursor: pointer;
   transition: transform 0.15s, border-color 0.15s;
 
