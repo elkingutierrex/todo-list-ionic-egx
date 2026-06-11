@@ -80,6 +80,7 @@ Strategic control documents for project lifecycle:
 - [Decisions Log](docs/decisions-log.md)
 - [Backlog](docs/backlog.md)
 - [Architecture Overview](docs/architecture.md)
+- [Respuestas a la Evaluación](docs/EXAM_ANSWERS.md)
 
 ---
 
@@ -108,6 +109,9 @@ This project uses **Capacitor** (the modern successor to Cordova) for hybrid bui
    ```bash
    cd android && ./gradlew assembleDebug
    ```
+
+> [!IMPORTANT]
+> **Nota sobre Capacitor**: Esta aplicación utiliza **Capacitor** en lugar de Cordova. Capacitor es el sucesor oficial de Cordova mantenido por el equipo de Ionic, ofreciendo una integración más nativa, mejor rendimiento y compatibilidad total con Angular 21, cumpliendo con los estándares modernos de desarrollo mobile.
 
 ---
 

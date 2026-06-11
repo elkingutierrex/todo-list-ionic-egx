@@ -16,16 +16,19 @@
 - [ ] Sort tasks by date, alphabetical, or category
 - [x] Swipe-to-delete gesture (Ionic item-sliding)
 - [x] Replace ngx-spinner with Ionic initial skeletons
-- [ ] Add unit tests for all services
+- [x] Add unit tests for core services (Auth/Task) using Vitest
 - [ ] Add E2E tests with Cypress / Playwright
-- [ ] Replace Firebase stub repositories with real implementations once credentials are available
-- [ ] Migrate `localStorage` to `@capacitor/preferences` for native persistence
-- [ ] Implement Firebase Security Rules in Firestore
-- [ ] Configure Remote Config parameters in Firebase Console
+- [x] Replace Firebase stub repositories with real implementations
+- [x] Migrate `localStorage` to `@capacitor/preferences` for native persistence
+- [ ] Implement Firebase Security Rules in Firestore (Manual Step)
+- [x] Configure Remote Config parameters in Firebase Console
 - [x] Generate native assets (Icons/Splash) using `@capacitor/assets`
 - [x] Premium UI Modernization (Indigo/Slate theme, Glassmorphism, Micro-animations)
 - [x] Enhanced Contrast & Accessibility (WCAG compliant colors)
-- [x] Stable Responsive Modal Layout for Task Form
+- [x] Stable Responsive Modal Layout for Task Form (Desktop & Mobile)
+- [x] Separate inline component Templates/Styles for maintainability
+- [x] Display Application Version in Navbar
+- [x] Fix absolute Logout with State Purge (Signals reset)
 
 ## Bugs
 

@@ -80,3 +80,11 @@ ion-input {
   ion-card { --background: #1e293b; }
   ion-item { --background: #0f172a; }
 }
+
+.version-footer {
+  margin-top: 24px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ion-color-medium);
+  opacity: 0.7;
+}

@@ -11,6 +11,7 @@ import { add, trash, create, arrowBack } from 'ionicons/icons';
 import { CategoryService } from '../../../../core/services/category.service';
 import { Category } from '../../../../core/models/category.model';
 import { CategoryFormModalComponent } from '../category-form-modal/category-form-modal.component';
+import { APP_CONFIG } from '../../../../core/constants/app.constants';
 
 @Component({
   selector: 'app-category-list',
@@ -33,6 +34,7 @@ export class CategoryListComponent implements OnInit {
 
   categories = this.categoryService.categories;
   isLoading = signal(true);
+  appVersion = APP_CONFIG.VERSION;
 
   constructor() {
     addIcons({ add, trash, create, arrowBack });

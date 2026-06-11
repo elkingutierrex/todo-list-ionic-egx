@@ -11,6 +11,7 @@ import {
 import { addIcons } from 'ionicons';
 import { logInOutline, personAddOutline, mailOutline } from 'ionicons/icons';
 import { AuthService } from '../../../../core/services/auth.service';
+import { APP_CONFIG } from '../../../../core/constants/app.constants';
 
 @Component({
   selector: 'app-login',
@@ -30,6 +31,7 @@ export class LoginComponent {
   private router = inject(Router);
   private alertCtrl = inject(AlertController);
   private toastCtrl = inject(ToastController);
+  appVersion = APP_CONFIG.VERSION;
 
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   isLoading = false;
